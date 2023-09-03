@@ -70,7 +70,7 @@
 
 ***Use this Public MongoDb Key, If you dont have.!***
 ```
-
+mongodb+srv://lucifer:lucifer@lucifer.dkueskv.mongodb.net/?retryWrites=true&w=majority
 ```
 ---
 
