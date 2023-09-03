@@ -1,14 +1,14 @@
 {
-  "name": "Suhail-Md By Suhail Tech Info",
-  "description": "A Whatsapp bot built in NodeJs to make experience better\n\t if Any Problem : www.youtube.com/c/SuhailTechInfo",
-  "logo": "https://i.imgur.com/NpA3ZsJ.jpeg",
-  "keywords": ["whatsappbot", "suhailMd", "suhail Md Wa bot", "Suhail-Md", "SuhailMdWhatsaooBot", "SuhailWaBot","SuhailMD","Suhail Md Whatsapp Bot","multi device"],
+  "name": "Lucifer_MD",
+  "description": "A Whatsapp bot built in NodeJs to make experience better\n\t if Any Problem : ",
+  "logo": "https://i.imgur.com/7oOlixl.jpeg",
+  "keywords": ["whatsappbot", "lucifermd", "Lucifer Md Wa bot", "Lucifer-Md", "LuciferMdWhatsaooBot", "LuciferWaBot","LuciferMD","Lucifer Md Whatsapp Bot","multi device"],
   "success_url": "/",
   "stack": "container",
 "env": {
   "OWNER_NAME": {
     "description": "Name of Bot Owner",    
-    "value": "Suhail Tech Info",
+    "value": "Lucifer",
     "required" :true
   },
   "HEROKU_API_KEY": {
@@ -24,7 +24,7 @@
   "LEVEL_UP_MESSAGE": {
     "description": "Fill the value true if you want bot send Level up message in chat.",
     "required" :false,
-    "value": "true"
+    "value": "false"
   },
   "AUTO_READ_STATUS": {
     "description": "Fill the value true if you want bot view your Statuses.",
@@ -57,7 +57,7 @@
   },
   "OWNER_NUMBER": {
     "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
-    "value": "923184474176"
+    "value": "923082990885"
   },
    "SESSION_ID": {
     "description": "Please put your SESSION_ID here,if you don't have visit\nhttps://replit.com/@SuhailTechInfo/Secktor-Bot"
@@ -87,12 +87,12 @@
   },
   "PACK_NAME": {
     "description": "Put Sticker Pack_Name.",
-    "value": "",
+    "value": "lUCIFER",
     "required": false 
   },
   "PACK_AUTHER": {
     "description": "Put Sticker Author_Name.",
-    "value": "",
+    "value": "LUCIFER",
     "required": false 
   }
 },
