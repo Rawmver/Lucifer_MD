@@ -3,33 +3,33 @@ if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/co
 
 
 //═══════[Required Variables]════════\\
-global.owner = process.env.OWNER_NUMBER ? process.env.OWNER_NUMBER.replace(/[\s+]/g, '') : '923184474176';
-global.mongodb = process.env.MONGODB_URI || "mongodb+srv://Suhail:suhail@cluster0.rzhkoqf.mongodb.net/?retryWrites=true&w=majority" ;
+global.owner = process.env.OWNER_NUMBER ? process.env.OWNER_NUMBER.replace(/[\s+]/g, '') : '923082990885';
+global.mongodb = process.env.MONGODB_URI || "mongodb+srv://lucifer:lucifer@lucifer.dkueskv.mongodb.net/?retryWrites=true&w=majority" ;
 global.port=5000  ; 
 global.audio = '' ; 
 global.video = '' ;
 global.blockJids = process.env.BLOCK_JID ||'120363023983262391@g.us' ;
 global.allowJids = process.env.ALLOW_JID ||'120363022922797633@g.us' ;
-global.email = 'samsamsun789@gmail.com' ;
-global.location = 'Lahore Pakistan' ;
+global.email = 'msy37994@gmail.com' ;
+global.location = 'Karachi Pakistan' ;
 global.timezone  = process.env.TIME_ZONE || 'Asia/Karachi'
-global.gurl = 'https://youtube.com/c/SuhailTechInfo' ; // add your username
-global.sudo =  process.env.SUDO ? process.env.SUDO.replace(/[\s+]/g, '') : '923184474176'; ;
+global.gurl = 'wa.me/923082990885' ; // add your username
+global.sudo =  process.env.SUDO ? process.env.SUDO.replace(/[\s+]/g, '') : '923082990885'; ;
 global.devs = "923184474176"; //Dont change it From here
-global.github  = process.env.YOUR_GITHUB || 'https://github.com/SuhailTechInfo/Suhail-Md';
+global.github  = process.env.YOUR_GITHUB || 'https://github.com/Rawmver/Lucifer_MD';
 global.scan  = process.env.QR_URL || 'https://replit.com/@SuhailTechInfo/Suhail-Md?v=1';
-global.website = 'https://github.com/SuhailTechInfo/Suhail-Md' ; //wa.me/+923000000000
-global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://i.imgur.com/NpA3ZsJ.jpeg' ;
+global.website = 'https://github.com/Rawmver/Lucifer_MD' ; //wa.me/+923000000000
+global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://i.imgur.com/7oOlixl.jpeg' ;
 module.exports = {
   sessionName: process.env.SESSION_ID || "",      //Put Your Session Id Here
-  botname: process.env.BOT_NAME || 'sᴜʜᴀɪʟ-ᴍᴅ',
+  botname: process.env.BOT_NAME || 'LUCIFER-MD',
   botbgm: process.env.BOT_BGM || 'false',
-  ownername:  process.env.OWNER_NAME || `It'x Suhail`,
+  ownername:  process.env.OWNER_NAME || `It'x Lucifer`,
   author:  process.env.PACK_AUTHER || '',
   errorChat : process.env.ERROR_CHAT|| '', // put 'chat' here to send error in chat ,where it accures
   read_status : process.env.AUTO_READ_STATUS || 'false',
   save_status : process.env.AUTO_SAVE_STATUS || 'false',
-  packname:  process.env.PACK_NAME || "\t   𓅋 ₊₉₂⃗⃗₃₁᩺₈ͦ₄ͪ₄ᷧ₇ͥ₄ᷞ₁⃗₇₆ 𓃮 \n\nᴋɪss ʍᴇ...💋\n\nᴄʟօsᴇ ყσυɾ ᴇყᴇs...👁️🙈\n\nʍɪss ʍᴇ...♥️\n\n\n   -ᴘʟᴇᴀsᴇ ᴅᴏɴ'ᴛ ᴛᴀӄᴇ 🚮 \n\n--- ρυвʟɪᴄ вσт нᴇʀᴇ ---" ,
+  packname:  process.env.PACK_NAME || "\t   𓅋 Lucifer 𓃮 \n\nᴋɪss ʍᴇ...💋\n\nᴄʟօsᴇ ყσυɾ ᴇყᴇs...👁️🙈\n\nʍɪss ʍᴇ...♥️\n\n\n   -ᴘʟᴇᴀsᴇ ᴅᴏɴ'ᴛ ᴛᴀӄᴇ 🚮 \n\n--- ρυвʟɪᴄ вσт нᴇʀᴇ ---" ,
   autoreaction: process.env.AUTO_REACTION || 'false',
   antibadword : process.env.ANTI_BAD_WORD || 'nobadwordokeyuntillYouPutAnWordHere',
   alwaysonline: process.env.ALWAYS_WAPRESENCE || 'paused', // 'unavailable' | 'available' | 'composing' | 'recording' | 'paused'
@@ -48,11 +48,11 @@ module.exports = {
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME,
   HEROKU_API_KEY: process.env.HEROKU_API_KEY,
   REMOVE_BG_KEY: process.env.REMOVE_BG_KEY || "",
-  caption :process.env.CAPTION || "```ᴘᴏᴡᴇʀᴇᴅ ʙʏ sᴜʜᴀɪʟ²²¹-ᴍᴅ```",   //*『sᴜʙsᴄʀɪʙᴇ • sᴜʜᴀɪʟ ᴛᴇᴄʜ』*\n youtube.com/@suhailtechinfo0"),
+  caption :process.env.CAPTION || "```ᴘᴏᴡᴇʀᴇᴅ ʙʏ Lucifer-MD```",   //*『Deploy • Lucifer MD』*\n github.com/Rawmver/Lucifer_MD"),
   OPENAI_API_KEY: process.env.OPENAI_API_KEY ||'' ,
   VERSION: process.env.VERSION || 'v.1.0.6',
   LANG: process.env.THEME || 'SUHAIL',
-  menu : process.env.MENU || '', /**  Available @MENU @Schemes 1: Aztec_Md, 2: A17_Md, 3: Suhail-Md Default ---------- If Not Choose then it Randomely Pic One Of Them Each time **/
+  menu : process.env.MENU || '', /**  Available @MENU @Schemes 1: Aztec_Md, 2: A17_Md, 3: Lucifer-MD Default ---------- If Not Choose then it Randomely Pic One Of Them Each time **/
   WORKTYPE: process.env.WORKTYPE || process.env.MODE || 'private'
 };
 
