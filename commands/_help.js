@@ -146,7 +146,7 @@ async(Suhail, citel) => {
   
               
    
-   //str += `╰━━━━━━━━━━━───⊷\nsᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo`
+   //str += `╰━━━━━━━━━━━───⊷\nMade by \n Lucifer MD`
               return await msg.sendMessage(msg.chat, { image: { url: THUMB_IMAGE }, caption: str + Config.caption})
           }
       )
