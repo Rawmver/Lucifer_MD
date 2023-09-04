@@ -127,14 +127,14 @@ smd({
           let { data } = await axios.get('https://api.github.com/repos/SuhailTechInfo/Secktor-bot')
         let cap = `
         
-🔰 *Suhail-Md Repo Info* 🔰
+🔰 *Lucifer_MD Repo Info* 🔰
   *❲❒❳ Stars:* ${data.stargazers_count} stars
   *❲❒❳ Forks:* ${data.forks_count} forks
-  *❲❒❳ Auther:* SuhailTechInfo
+  *❲❒❳ Auther:* Lucifer
   *❲❒❳ Create:* ${data.created_at}
   *❲❒❳ Repo:* _${github}_
   *❲❒❳ Scan:* _${scan}_\n
-  *❲❒❳ Visit For Tutorial* _https://www.Youtube.com/c/SuhailTechInfo_
+  *❲❒❳ Visit For Contact* _wa.me/923082990885_
 ${Config.caption?'\n\n'+Config.caption : ''}`.trim();
 	
         return await Suhail.bot.sendMessage(citel.chat,  {   image: { url: await botpic() },    caption: cap,  } , {   quoted: citel, });
