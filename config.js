@@ -51,7 +51,7 @@ module.exports = {
   caption :process.env.CAPTION || "```ᴘᴏᴡᴇʀᴇᴅ ʙʏ Lucifer-MD```",   //*『Deploy • Lucifer MD』*\n github.com/Rawmver/Lucifer_MD"),
   OPENAI_API_KEY: process.env.OPENAI_API_KEY ||'' ,
   VERSION: process.env.VERSION || 'v.1.0.6',
-  LANG: process.env.THEME || 'SUHAIL',
+  LANG: process.env.THEME || 'LUCIFER',
   menu : process.env.MENU || '', /**  Available @MENU @Schemes 1: Aztec_Md, 2: A17_Md, 3: Lucifer-MD Default ---------- If Not Choose then it Randomely Pic One Of Them Each time **/
   WORKTYPE: process.env.WORKTYPE || process.env.MODE || 'private'
 };
