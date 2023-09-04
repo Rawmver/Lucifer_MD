@@ -61,12 +61,12 @@ smd({
             category: "tools",
             filename: __filename
         },
-        async(Suhail, msg, text,{ isCreator }) => {
+        async(Lucifer, msg, text,{ isCreator }) => {
             if (!isCreator) return msg.reply(`This command is only for my owner`)
             let commits = await DB.syncgit()
             if (commits.total === 0) return await msg.reply(`*BOT IS UPTO DATE...!!*`) 
             let update = `*SUHAIL_MD New Updates:*\n\n${await DB.sync()}`
-            await Suhail.bot.sendMessage(msg.chat, { text: update, },{ quoted : msg });
+            await Lucifer.bot.sendMessage(msg.chat, { text: update, },{ quoted : msg });
             if(Config.HEROKU_APP_NAME && Config.HEROKU_API_KEY && text == 'start')
             {
                await msg.reply('Heroku Build started...');
@@ -89,12 +89,12 @@ smd({
                  category: "tools",
                  filename: __filename
              },
-        async(Suhail, msg, text,{ isCreator }) => {
+        async(Lucifer, msg, text,{ isCreator }) => {
                 if(!isCreator) return await msg.reply("Only Owner Can Use This Command")
                 let commits = await DB.syncgit()
                 if (commits.total === 0) return await msg.reply(`*YOU HAVE LATEST VERSION INSTALLED!*`)
                 let update = await DB.sync()
-                await msg.send(" *SUHAIL_MD Updater Started...!*\n\n*Please wait you have new updates*\n *───────────────────────────*\n"+update +"\n\n\n"+Config.caption);
+                await msg.send(" *Lucifer_MD Updater Started...!*\n\n*Please wait you have new updates*\n *───────────────────────────*\n"+update +"\n\n\n"+Config.caption);
                 await sleep(3000);
           try{
                let res = await updateHerokuApp('no');
@@ -102,6 +102,6 @@ smd({
           await msg.reply(`*Successfully updated. Now You Have Latest Version Installed!*`);
                 process.exit(0);
        })
-smd({   pattern: "restart", desc: "To restart bot",category: "tools", filename: __filename }, async(Suhail, msg,text,{ isCreator }) => {  if (!isCreator) return msg.reply(tlang().owner);  const { exec } = require("child_process"); msg.reply('Restarting'); exec('pm2 restart all'); });
+smd({   pattern: "restart", desc: "To restart bot",category: "tools", filename: __filename }, async(Lucifer, msg,text,{ isCreator }) => {  if (!isCreator) return msg.reply(tlang().owner);  const { exec } = require("child_process"); msg.reply('Restarting'); exec('pm2 restart all'); });
 
  
