@@ -65,28 +65,28 @@ function _0x232f(){const _0x59aa77=['Naruto','\x0a*More\x20on✨:*\x20','map','1
 //-----------------------------------------------------------------------
 
 //-----------------------------------------------------------------------
-smd({pattern: "waifu",desc: "To get Waifu Random Pics",category: "Anime Pics",filename: __filename },async(Suhail, msg, text , {cmdName}) => { console.log("Cmd : " , cmdName);   return await sendAnime(Suhail,msg ,'waifu' , text);});
+smd({pattern: "waifu",desc: "To get Waifu Random Pics",category: "Anime Pics",filename: __filename },async(Lucifer, msg, text , {cmdName}) => { console.log("Cmd : " , cmdName);   return await sendAnime(Lucifer,msg ,'waifu' , text);});
 //-----------------------------------------------------------------------
-smd({pattern: "neko", category: "Anime Pics",desc: "Sends a Neko Image in chat",filename: __filename },async(Suhail, msg, text , {cmdName}) => { return await sendAnime(Suhail,msg ,'neko' , text);});
+smd({pattern: "neko", category: "Anime Pics",desc: "Sends a Neko Image in chat",filename: __filename },async(Lucifer, msg, text , {cmdName}) => { return await sendAnime(Lucifer,msg ,'neko' , text);});
 //-----------------------------------------------------------------------
-smd({ pattern: "megumin",desc: "To get Waifu Random Pics",category: "Anime Pics",filename: __filename },async(Suhail, msg, text , {cmdName}) => { return await sendAnime(Suhail,msg ,'megumin' , text);});
+smd({ pattern: "megumin",desc: "To get Waifu Random Pics",category: "Anime Pics",filename: __filename },async(Lucifer, msg, text , {cmdName}) => { return await sendAnime(Lucifer,msg ,'megumin' , text);});
 //-----------------------------------------------------------------------
-smd({ pattern: "loli",category: "Anime Pics",filename: __filename,desc: "Sends image of loli."},async(Suhail, msg) => {  return await sendAnime(Suhail,msg ,'loli',);});
+smd({ pattern: "loli",category: "Anime Pics",filename: __filename,desc: "Sends image of loli."},async(Lucifer, msg) => {  return await sendAnime(Lucifer,msg ,'loli',);});
 //-----------------------------------------------------------------------
-smd({pattern: "foxgirl",category: "Anime Pics",desc: "Sends image of Fox Girl Anime.", filename: __filename},async(Suhail, msg) => {  return await sendAnime(Suhail,msg ,'foxgirl',); });
+smd({pattern: "foxgirl",category: "Anime Pics",desc: "Sends image of Fox Girl Anime.", filename: __filename},async(Lucifer, msg) => {  return await sendAnime(Lucifer,msg ,'foxgirl',); });
 //-----------------------------------------------------------------------
-smd({pattern: "demon",alias : ["ds"],desc: "To get Naruto Random Videos",category: "Anime Pics",filename: __filename},async(Suhail, msg) => {  return await sendAnime(Suhail,msg ,'demon',); });
+smd({pattern: "demon",alias : ["ds"],desc: "To get Naruto Random Videos",category: "Anime Pics",filename: __filename},async(Lucifer, msg) => {  return await sendAnime(Lucifer,msg ,'demon',); });
 //------------------------------------------------------------------------
-smd({pattern: "naruto",desc: "To get Naruto Random Videos",category: "Anime Pics",filename: __filename},async(Suhail, msg) => {  return await sendAnime(Suhail,msg ,'naruto',); });
+smd({pattern: "naruto",desc: "To get Naruto Random Videos",category: "Anime Pics",filename: __filename},async(Lucifer, msg) => {  return await sendAnime(Lucifer,msg ,'naruto',); });
 //-------------------------------------------------------------------------
-smd({pattern: "pokepic",category: "Anime Pics",filename: __filename,desc: "Sends image of pokemon."},async(Suhail, msg, text) => { return await sendGImages(msg ,text+"Pokemon Pics only HD ", `*---「 Poke Pic 」---*`, text );});
+smd({pattern: "pokepic",category: "Anime Pics",filename: __filename,desc: "Sends image of pokemon."},async(Lucifer, msg, text) => { return await sendGImages(msg ,text+"Pokemon Pics only HD ", `*---「 Poke Pic 」---*`, text );});
 //-------------------------------------------------------------------------
-smd({pattern: "animepic",category: "Anime Pics",filename: __filename,desc: "Anime images"},async(Suhail, msg, text) => { return await sendGImages(msg ,text+"Anime Pics HD", `*-----「 Anime Image 」-----*`, text );});
+smd({pattern: "animepic",category: "Anime Pics",filename: __filename,desc: "Anime images"},async(Lucifer, msg, text) => { return await sendGImages(msg ,text+"Anime Pics HD", `*-----「 Anime Image 」-----*`, text );});
 //-----------------------------------------------------------------------
-smd({ pattern: "animewall",category: "Anime Pics",desc: "Anime Wallpaper Random",filename: __filename},async(Suhail, msg, text) => {return await sendGImages(msg ,text+"anime wallpaper for desktop full hd", `*---「 Anime Wallpaper 」---*` , text );});
+smd({ pattern: "animewall",category: "Anime Pics",desc: "Anime Wallpaper Random",filename: __filename},async(Lucifer, msg, text) => {return await sendGImages(msg ,text+"anime wallpaper for desktop full hd", `*---「 Anime Wallpaper 」---*` , text );});
 //-----------------------------------------------------------------------
 let qq = ["Anime News Today","New Anime","Uocoming Anime News","New Anime Info","Whats news in Anime","Anime Series","Manga News today","Anime New News","Anime News today",];
-smd({ pattern: "animenews",category: "Anime Pics", desc: "Sends Anime News in chat",filename: __filename},async(Suhail,msg,text,{cmdName}) => {let q1=qq[Math.floor(Math.random()*qq.length)]+text;return await sendAnime(Suhail,msg,cmdName, q1);});
+smd({ pattern: "animenews",category: "Anime Pics", desc: "Sends Anime News in chat",filename: __filename},async(Lucifer,msg,text,{cmdName}) => {let q1=qq[Math.floor(Math.random()*qq.length)]+text;return await sendAnime(Lucifer,msg,cmdName, q1);});
 //---------------------------------------------------------------------------
 smd({
     pattern: "pokemon",
@@ -94,7 +94,7 @@ smd({
     filename: __filename,
     desc: "Sends info of pokemon in current chat."
 },
-async(Suhail, msg, text) => {
+async(Lucifer, msg, text) => {
         if(!text) return msg.reply("*Uhh Please Give Me Poki Name/num*")
     try {
         let { data: data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${text}`)
@@ -116,7 +116,7 @@ smd({
     filename: __filename,
     desc: "Sends info about asked manga."
 },
-async(Suhail, msg, text) => {
+async(Lucifer, msg, text) => {
     if (!text) return msg.reply(`Which Manga do you want to Search? \n _Please give me a name._`);
     const { Manga } = require("@shineiichijo/marika");
     const manga = new Manga();
@@ -138,7 +138,7 @@ async(Suhail, msg, text) => {
     mang += `\n*🌐URL: ${srh.data[0].url}*\n\n`;
     if (srh.data[0].background !== null) mang += `*🎆Background:* ${srh.data[0].background}`;
     mang += `*❄️Description:* ${srh.data[0].synopsis}`;
-    Suhail.bot.sendMessage(msg.chat, {  image: {  url: srh.data[0].images.jpg.large_image_url,  }, caption: mang, }, {  quoted: msg,  });
+    Lucifer.bot.sendMessage(msg.chat, {  image: {  url: srh.data[0].images.jpg.large_image_url,  }, caption: mang, }, {  quoted: msg,  });
 
 }
 )
@@ -148,7 +148,7 @@ smd({
     category: "Anime Pics",
     desc: "Searches Info about Anime and Provides result."
 },
-async(Suhail, msg, text) => {
+async(Lucifer, msg, text) => {
     if (!text) return msg.reply(`Which Anime do you want to search?\n _Please give me a name._`);
     const client = new Anime();
     let anime = await client.searchAnime(text);
@@ -179,7 +179,7 @@ async(Suhail, msg, text) => {
         details += `🎆Background: ${result.background}*\n\n`;
     details += `❄Description: ${result.synopsis}`;
 
- Suhail.bot.sendMessage( msg.chat, { image: {  url: result.images.jpg.large_image_url, }, caption: details, }, { quoted: msg,});
+ Lucifer.bot.sendMessage( msg.chat, { image: {  url: result.images.jpg.large_image_url, }, caption: details, }, { quoted: msg,});
 }
    )
 //---------------------------------------------------------------------------
