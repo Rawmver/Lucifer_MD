@@ -53,7 +53,7 @@ smd({
    category: "misc",
 filename: __filename
 },
-async(Suhail, msg, text,{ isCreator }) => {
+async(Lucifer, msg, text,{ isCreator }) => {
 
        let grp =msg.chat;
        if (!msg.isGroup) return msg.reply(tlang().group);
@@ -69,8 +69,8 @@ async(Suhail, msg, text,{ isCreator }) => {
      let num = msg.sender;
  
      var welcome_messages = text.replace(/@pp/g, '').replace(/@user/gi, `@${num.split("@")[0]}`).replace(/@gname/gi, metadata.subject).replace(/@desc/gi, metadata.desc).replace(/@count/gi, metadata.participants.length);
-     try {  ppuser = await Suhail.bot.profilePictureUrl(num, 'image') }catch { ppuser = 'https://telegra.ph/file/93f1e7e8a1d7c4486df9e.jpg' ; }
-     return await Suhail.bot.sendMessage(msg.chat, { image: { url: ppuser }, caption: welcome_messages,mentions: [num] } )
+     try {  ppuser = await Lucifer.bot.profilePictureUrl(num, 'image') }catch { ppuser = 'https://telegra.ph/file/1d400582b671f21db54d6.jpg' ; }
+     return await Lucifer.bot.sendMessage(msg.chat, { image: { url: ppuser }, caption: welcome_messages,mentions: [num] } )
 
  
 }
@@ -83,10 +83,10 @@ smd({
    category: "misc",
 filename: __filename
 },
-async(Suhail, msg, text,{ isCreator }) => {
+async(Lucifer, msg, text,{ isCreator }) => {
 
    if (!msg.isGroup) return msg.reply(tlang().group);
-   const groupAdmins = await getAdmin(Suhail.bot, msg)	
+   const groupAdmins = await getAdmin(Lucifer.bot, msg)	
    const isAdmins = groupAdmins.includes(msg.sender) 
    if (!isAdmins && !isCreator) return msg.reply(tlang().admin);
 
@@ -94,13 +94,13 @@ async(Suhail, msg, text,{ isCreator }) => {
    if (!text)  {  return await msg.reply ("*_Goodbye Message Is:_* "+Group.goodbye)  }
    await sck.updateOne({ id: msg.chat }, { goodbye:text,events:'true' }) 
 
-   let metadata = await Suhail.bot.groupMetadata(msg.chat);
+   let metadata = await Lucifer.bot.groupMetadata(msg.chat);
    var ppuser;
    let num = msg.sender;
    var goodbye_messages = text.replace(/@pp/g, '').replace(/@user/gi, `@${num.split("@")[0]}`).replace(/@gname/gi, metadata.subject).replace(/@desc/gi, metadata.desc).replace(/@count/gi, metadata.participants.length);
-   try {  ppuser = await Suhail.bot.profilePictureUrl(num, 'image') }catch { ppuser = 'https://telegra.ph/file/93f1e7e8a1d7c4486df9e.jpg' ; }
+   try {  ppuser = await Lucifer.bot.profilePictureUrl(num, 'image') }catch { ppuser = 'https://telegra.ph/file/1d400582b671f21db54d6.jpg' ; }
 
-       return await Suhail.bot.sendMessage(msg.chat, { image: { url: ppuser }, caption: goodbye_messages, mentions: [num] })
+       return await Lucifer.bot.sendMessage(msg.chat, { image: { url: ppuser }, caption: goodbye_messages, mentions: [num] })
 
 })
 
@@ -120,7 +120,7 @@ smd({
             category: "misc",
             filename: __filename
         },
-        async(Suhail.bot, msg, text) => {
+        async(Lucifer.bot, msg, text) => {
  if (!msg.quoted) return msg.reply("*Reply to A Code Of Statements to Execute*")
             try {
                 const code = {
@@ -154,7 +154,7 @@ smd({
             category: "user",
             filename: __filename
         },
-        async(Suhail, msg, text) => {
+        async(Lucifer, msg, text) => {
             if(!msg.quoted && !msg.mentionedJid) return await msg.reply(`*Please Reply Or Mention A User*`);
             let users = msg.mentionedJid ? msg.mentionedJid[0].split('@')[0] : msg.quoted ? msg.quoted.sender.split('@')[0] : text.replace('@')[0]
            return await  msg.reply(`https://wa.me/${users}`);
@@ -168,7 +168,7 @@ smd({
             category: "user",
             filename: __filename
         },
-        async(Suhail, msg, text) => {  let user = msg.sender.split('@')[0]  ; return await msg.reply( `https://wa.me/${user}` ); })
+        async(Lucifer, msg, text) => {  let user = msg.sender.split('@')[0]  ; return await msg.reply( `https://wa.me/${user}` ); })
     //---------------------------------------------------------------------------
 smd({
             pattern: "pick",
@@ -176,15 +176,15 @@ smd({
             category: "group",
             filename: __filename
         },
-        async(Suhail, msg, match) => {
+        async(Lucifer, msg, match) => {
             if (!match) return msg.reply("*Which type of User you want?*");
-            const groupMetadata = msg.isGroup ? await Suhail.bot.groupMetadata(msg.chat)
+            const groupMetadata = msg.isGroup ? await Lucifer.bot.groupMetadata(msg.chat)
                 .catch((e) => {}) : "";
             const participants = msg.isGroup ? await groupMetadata.participants : "";
             let member = participants.map((u) => u.id);
             let me = msg.sender;
             let pick = member[Math.floor(Math.random() * member.length)];
-            Suhail.bot.sendMessage(msg.chat, {
+            Lucifer.bot.sendMessage(msg.chat, {
                 text: `The most ${match} around us is *@${pick.split("@")[0]}*`,
                 mentions: [pick],
             }, {
@@ -201,7 +201,7 @@ smd({
             use: '<package name>',
             filename: __filename
         },
-        async(Suhail, msg, text) => {
+        async(Lucifer, msg, text) => {
             if (!text) return msg.reply('Please give me package name.📦')
             axios.get(`https://api.npms.io/v2/search?q=${text}`).then(({ data }) => {
                 let txt = data.results.map(({ package: pkg }) => `*${pkg.name}* (v${pkg.version})\n_${pkg.links.npm}_\n_${pkg.description}_`).join('\n\n')
@@ -217,7 +217,7 @@ smd({
             use: '<query>',
             filename: __filename
         },
-        async(Suhail, msg, text) => {
+        async(Lucifer, msg, text) => {
             if (!text) return msg.reply(`Example : ${prefix}fliptext Back in black`)
             flipe = text.split('').reverse().join('')
             msg.reply(`\`\`\`「  Text Flipper Tool  」\`\`\`\n*IGiven text :*\n${text}\n*Fliped text :*\n${flipe}`)
@@ -234,9 +234,9 @@ smd({
             use: '<url>',
             filename: __filename
         },
-        async(Suhail, msg, text) => {
+        async(Lucifer, msg, text) => {
             if (!text) return msg.reply(`_give me Video Link ?_`);
-            Suhail.bot.sendMessage(msg.chat, {
+            Lucifer.bot.sendMessage(msg.chat, {
                 video: {
                     url: text.split(" ")[0],
                 },
@@ -263,11 +263,11 @@ smd({
             category: "misc",
             filename: __filename
         },
-        async(Suhail, msg, text,{isCreator}) => {
+        async(Lucifer, msg, text,{isCreator}) => {
             let checkgroup = await sck.findOne({ id: msg.chat })
             if (!msg.isGroup) return msg.reply(tlang().group);
-            const groupAdmins = await getAdmin(Suhail.bot, msg)
-            //const botNumber = await Suhail.bot.decodeJid(Suhail.bot.user.id)
+            const groupAdmins = await getAdmin(Lucifer.bot, msg)
+            //const botNumber = await Lucifer.bot.decodeJid(Suhail.bot.user.id)
             //const isBotAdmins = msg.isGroup ? groupAdmins.includes(botNumber) : false;
             const isAdmins = msg.isGroup ? groupAdmins.includes(msg.sender) : false;
             
@@ -292,7 +292,7 @@ smd({
             category: "misc",
             filename: __filename
         },
-        async(Suhail, msg, text,{ isCreator }) => {
+        async(Lucifer, msg, text,{ isCreator }) => {
             if (!isCreator) return msg.reply(tlang().owner)
             const { chatbot } = require('../lib/');
             let chatbott= await chatbot.findOne({ id: 'chatbot' }) ||  await new chatbot({ id: 'chatbot', worktype: "true" }).save()
@@ -335,7 +335,7 @@ smd({
             use: '<query>',
             filename: __filename
         },
-        async(Suhail, msg, text,{ isCreator }) => {
+        async(Lucifer, msg, text,{ isCreator }) => {
             try {
                 if (!text) return msg.reply(`Send text to be encoded.`);
 
@@ -355,7 +355,7 @@ smd({
             use: '<query>',
             filename: __filename
         },
-        async(Suhail, msg, text,{ isCreator }) => {
+        async(Lucifer, msg, text,{ isCreator }) => {
             try {
                 if (!text) return msg.reply(`Send text to be decoded.`);
                 let eb = await dBinary(text);
@@ -377,7 +377,7 @@ smd({
  category: "misc",
  filename: __filename
 },
-async(Suhail, msg, text,{isCreator}) => {
+async(Lucifer, msg, text,{isCreator}) => {
  if (!msg.isGroup) return msg.reply(tlang().group);
  if(!isCreator) return msg.reply(tlang().owner)
  switch (text.split(" ")[0]) {
@@ -427,7 +427,7 @@ async(Suhail, msg, text,{isCreator}) => {
                             type: 1,
                         },
                     ];
-                    await Suhail.bot.sendButtonText(msg.chat, buttons, `Bot Status in Group: ${checkgroup.botenable}`, Suhail.bot.user.name, msg);
+                    await Lucifer.bot.sendButtonText(msg.chat, buttons, `Bot Status in Group: ${checkgroup.botenable}`, Lucifer.bot.user.name, msg);
           }
       }
 })   
@@ -440,11 +440,11 @@ smd({
             category: "group",
             filename: __filename
         },
-        async(Suhail.bot, msg, text , {isCreator}) => {
+        async(Lucifer.bot, msg, text , {isCreator}) => {
             if (!msg.isGroup) return msg.reply(tlang().group);
           let check = text ? text : '';
             let checkgroup = await sck.findOne({ id: msg.chat }) || await new sck({id : msg.chat , antispam : 'true'  }) .save();
-            const groupAdmins = await getAdmin(Suhail.bot, msg)
+            const groupAdmins = await getAdmin(Lucifer.bot, msg)
             const isAdmins = msg.isGroup ? groupAdmins.includes(msg.sender) : false;
             if (!isAdmins && !isCreator) return msg.reply(tlang().admin)     
             if (check.startsWith("on") || check.startsWith("enable") || check.startsWith("act"))
@@ -475,12 +475,12 @@ else return msg.reply(`Antispam : kick Users Who Spamming in Groupn\n\nAntispam 
        category: "group",
        filename: __filename
    },
-   async(Suhail, msg, text , {isCreator}) => {
+   async(Lucifer, msg, text , {isCreator}) => {
        function _0x1dd1(_0x190e77,_0x3842b6){const _0x3a2918=_0x3a29();return _0x1dd1=function(_0x1dd110,_0xc0890d){_0x1dd110=_0x1dd110-0x12f;let _0x2f3ec3=_0x3a2918[_0x1dd110];return _0x2f3ec3;},_0x1dd1(_0x190e77,_0x3842b6);}const _0x537363=_0x1dd1;(function(_0x2a498c,_0xe9d7f2){const _0x20fff1=_0x1dd1,_0x275af4=_0x2a498c();while(!![]){try{const _0x1bf60a=-parseInt(_0x20fff1(0x135))/0x1+-parseInt(_0x20fff1(0x14a))/0x2*(-parseInt(_0x20fff1(0x14b))/0x3)+parseInt(_0x20fff1(0x12f))/0x4*(parseInt(_0x20fff1(0x14e))/0x5)+-parseInt(_0x20fff1(0x139))/0x6+parseInt(_0x20fff1(0x13b))/0x7+-parseInt(_0x20fff1(0x136))/0x8+-parseInt(_0x20fff1(0x13c))/0x9*(parseInt(_0x20fff1(0x148))/0xa);if(_0x1bf60a===_0xe9d7f2)break;else _0x275af4['push'](_0x275af4['shift']());}catch(_0x96c32a){_0x275af4['push'](_0x275af4['shift']());}}}(_0x3a29,0xebdc8));if(!msg['isGroup'])return msg['reply'](tlang()[_0x537363(0x141)]);const groupAdmins=await getAdmin(Suhail.bot,msg),isAdmins=msg[_0x537363(0x130)]?groupAdmins[_0x537363(0x143)](msg[_0x537363(0x131)]):![];if(!isAdmins&&!isCreator)return msg[_0x537363(0x149)](tlang()[_0x537363(0x137)]);let checkinfo=await sck['findOne']({'id':msg[_0x537363(0x142)]})||await new sck({'id':msg[_0x537363(0x142)]})[_0x537363(0x13f)](),textt=text?text[_0x537363(0x151)]()['trim']():![],action=textt?textt[_0x537363(0x13e)]('\x20')[0x0]:![];function _0x3a29(){const _0x5d7267=['3041848KwfWrd','admin','delete','3314166wTfUba','antilink\x20kick/delete/off_*','3559514diYetN','9CvvJaC','*_Antilink\x20','split','save','updateOne','group','chat','includes','send','deact','off','*_Uhh\x20Dear,\x20Please\x20Provide\x20Valid\x20Instruction_*\x0a*Eg:\x20_','1361390agAqTj','reply','26518zyirsz','237MuHrUF','\x0a\x0a*Antilink\x20Modes:*\x0a\x20\x20.antilink\x20kick\x20(Delete\x20Links\x20&\x20Kick\x20Senders)\x0a\x20\x20.antilink\x20delete\x20(Delete\x20Links\x20Only)\x0a\x20\x20.antilink\x20off\x20(Disable\x20Antilink\x20in\x20chat)\x0a\x0a\x0a','disable','126675qiyDRV','*_Anti_Link\x20Succesfully\x20set\x20to\x20kick\x20link\x20senders!_*','kick','toLowerCase','caption','Disabled','startsWith','antilink','196ZzhnRb','isGroup','sender','false','*_Anti_Link\x20Disabled\x20Succesfully!_*','*Current\x20Mode:*\x20_','762559wgiCsM'];_0x3a29=function(){return _0x5d7267;};return _0x3a29();}if(!action)return await msg[_0x537363(0x144)](_0x537363(0x13d)+(checkinfo[_0x537363(0x155)]===_0x537363(0x132)?_0x537363(0x153):'Enabled')+'\x20in\x20this\x20Group!_*\x20\x0a\x20'+(checkinfo[_0x537363(0x155)]==='false'?'':_0x537363(0x134)+checkinfo[_0x537363(0x155)]+'_')+_0x537363(0x14c)+Config[_0x537363(0x152)]);else{if(action[_0x537363(0x154)](_0x537363(0x146))||action[_0x537363(0x154)](_0x537363(0x145))||action['startsWith'](_0x537363(0x14d)))return await sck[_0x537363(0x140)]({'id':msg['chat']},{'antilink':_0x537363(0x132)}),await msg['send'](_0x537363(0x133));else{if(action[_0x537363(0x154)]('kick'))return await sck[_0x537363(0x140)]({'id':msg[_0x537363(0x142)]},{'antilink':_0x537363(0x150)}),await msg[_0x537363(0x144)](_0x537363(0x14f));else{if(action['startsWith']('delete'))return await sck['updateOne']({'id':msg['chat']},{'antilink':_0x537363(0x138)}),await msg[_0x537363(0x144)]('*_Anti_Link\x20Succesfully\x20set\x20to\x20delete\x20links\x20from\x20chat!_*');else return await msg[_0x537363(0x144)](_0x537363(0x147)+prefix+_0x537363(0x13a));}}}
      
 })
     //---------------------------------------------------------------------------
-smd({ on: "body" }, async(Suhail, msg) => {
+smd({ on: "body" }, async(Lucifer, msg) => {
   if (!Config.autoreaction) return 
   else if (Config.autoreaction === 'true') {
         const emojis = ['❤', '💕', '😻', '🧡', '💛', '💚', '💙', '💜', '🖤', '❣', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥', '💌', '🙂', '🤗', '😌', '😉', '🤗', '😊', '🎊', '🎉', '🎁', '🎈', '👋']
@@ -496,7 +496,7 @@ smd({ on: "body" }, async(Suhail, msg) => {
  else if (Config.autoreaction === 'all') {
         const mojis = ['💘','💝','💖','💗','💓','💞','💕','💟','❣️','💔','❤️','🧡','💛','💚','💙','💜','🤎','🖤','🤍','❤️‍','🔥','❤️‍','🩹','💯','♨️','💢','💬','👁️‍🗨️','🗨️','🗯️','💭','💤','🌐','♠️','♥️','♦️','♣️','🃏','🀄️','🎴','🎭️','🔇','🔈️','🔉','🔊','🔔','🔕','🎼','🎵','🎶','💹','🏧','🚮','🚰','♿️','🚹️','🚺️','🚻','🚼️','🚾','🛂','🛃','🛄','🛅','⚠️','🚸','⛔️','🚫','🚳','🚭️','🚯','🚱','🚷','📵','🔞','☢️','☣️','⬆️','↗️','➡️','↘️','⬇️','↙️','⬅️','↖️','↕️','↔️','↩️','↪️','⤴️','⤵️','🔃','🔄','🔙','🔚','🔛','🔜','🔝','🛐','⚛️','🕉️','✡️','☸️','☯️','✝️','☦️','☪️','☮️','🕎','🔯','♈️','♉️','♊️','♋️','♌️','♍️','♎️','♏️','♐️','♑️','♒️','♓️','⛎','🔀','🔁','🔂','▶️','⏩️','⏭️','⏯️','◀️','⏪️','⏮️','🔼','⏫','🔽','⏬','⏸️','⏹️','⏺️','⏏️','🎦','🔅','🔆','📶','📳','📴','♀️','♂️','⚧','✖️','➕','➖','➗','♾️','‼️','⁉️','❓️','❔','❕','❗️','〰️','💱','💲','⚕️','♻️','⚜️','🔱','📛','🔰','⭕️','✅','☑️','✔️','❌','❎','➰','➿','〽️','✳️','✴️','❇️','©️','®️','™️','#️⃣','*️⃣','0️⃣','1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟','🔠','🔡','🔢','🔣','🔤','🅰️','🆎','🅱️','🆑','🆒','🆓','ℹ️','🆔','Ⓜ️','🆕','🆖','🅾️','🆗','🅿️','🆘','🆙','🆚','🈁','🈂️','🈷️','🈶','🈯️','🉐','🈹','🈚️','🈲','🉑','🈸','🈴','🈳','㊗️','㊙️','🈺','🈵','🔴','🟠','🟡','🟢','🔵','🟣','🟤','⚫️','⚪️','🟥','🟧','🟨','🟩','🟦','🟪','🟫','⬛️','⬜️','◼️','◻️','◾️','◽️','▪️','▫️','🔶','🔷','🔸','🔹','🔺','🔻','💠','🔘','🔳','🔲','🕛️','🕧️','🕐️','🕜️','🕑️','🕝️','🕒️','🕞️','🕓️','🕟️','🕔️','🕠️','🕕️','🕡️','🕖️','🕢️','🕗️','🕣️','🕘️','🕤️','🕙️','🕥️','🕚️','🕦️','*️','#️','0️','1️','2️','3️','4️','5️','6️','7️','8️','9️','🛎️','🧳','⌛️','⏳️','⌚️','⏰','⏱️','⏲️','🕰️','🌡️','🗺️','🧭','🎃','🎄','🧨','🎈','🎉','🎊','🎎','🎏','🎐','🎀','🎁','🎗️','🎟️','🎫','🔮','🧿','🎮️','🕹️','🎰','🎲','♟️','🧩','🧸','🖼️','🎨','🧵','🧶','👓️','🕶️','🥽','🥼','🦺','👔','👕','👖','🧣','🧤','🧥','🧦','👗','👘','🥻','🩱','🩲','🩳','👙','👚','👛','👜','👝','🛍️','🎒','👞','👟','🥾','🥿','👠','👡','🩰','👢','👑','👒','🎩','🎓️','🧢','⛑️','📿','💄','💍','💎','📢','📣','📯','🎙️','🎚️','🎛️','🎤','🎧️','📻️','🎷','🎸','🎹','🎺','🎻','🪕','🥁','📱','📲','☎️','📞','📟️','📠','🔋','🔌','💻️','🖥️','🖨️','⌨️','🖱️','🖲️','💽','💾','💿️','📀','🧮','🎥','🎞️','📽️','🎬️','📺️','📷️','📸','📹️','📼','🔍️','🔎','🕯️','💡','🔦','🏮','🪔','📔','📕','📖','📗','📘','📙','📚️','📓','📒','📃','📜','📄','📰','🗞️','📑','🔖','🏷️','💰️','💴','💵','💶','💷','💸','💳️','🧾','✉️','💌','📧','🧧','📨','📩','📤️','📥️','📦️','📫️','📪️','📬️','📭️','📮','🗳️','✏️','✒️','🖋️','🖊️','🖌️','🖍️','📝','💼','📁','📂','🗂️','📅','📆','🗒️','🗓️','📇','📈','📉','📊','📋️','📌','📍','📎','🖇️','📏','📐','✂️','🗃️','🗄️','🗑️','🔒️','🔓️','🔏','🔐','🔑','🗝️','🔨','🪓','⛏️','⚒️','🛠️','🗡️','⚔️','💣️','🏹','🛡️','🔧','🔩','⚙️','🗜️','⚖️','🦯','🔗','⛓️','🧰','🧲','⚗️','🧪','🧫','🧬','🔬','🔭','📡','💉','🩸','💊','🩹','🩺','🚪','🛏️','🛋️','🪑','🚽','🚿','🛁','🪒','🧴','🧷','🧹','🧺','🧻','🧼','🧽','🧯','🛒','🚬','⚰️','⚱️','🏺','🕳️','🏔️','⛰️','🌋','🗻','🏕️','🏖️','🏜️','🏝️','🏟️','🏛️','🏗️','🧱','🏘️','🏚️','🏠️','🏡','🏢','🏣','🏤','🏥','🏦','🏨','🏩','🏪','🏫','🏬','🏭️','🏯','🏰','💒','🗼','🗽','⛪️','🕌','🛕','🕍','⛩️','🕋','⛲️','⛺️','🌁','🌃','🏙️','🌄','🌅','🌆','🌇','🌉','🗾','🏞️','🎠','🎡','🎢','💈','🎪','🚂','🚃','🚄','🚅','🚆','🚇️','🚈','🚉','🚊','🚝','🚞','🚋','🚌','🚍️','🚎','🚐','🚑️','🚒','🚓','🚔️','🚕','🚖','🚗','🚘️','🚙','🚚','🚛','🚜','🏎️','🏍️','🛵','🦽','🦼','🛺','🚲️','🛴','🛹','🚏','🛣️','🛤️','🛢️','⛽️','🚨','🚥','🚦','🛑','🚧','⚓️','⛵️','🛶','🚤','🛳️','⛴️','🛥️','🚢','✈️','🛩️','🛫','🛬','🪂','💺','🚁','🚟','🚠','🚡','🛰️','🚀','🛸','🎆','🎇','🎑','🗿','⚽️','⚾️','🥎','🏀','🏐','🏈','🏉','🎾','🥏','🎳','🏏','🏑','🏒','🥍','🏓','🏸','🥊','🥋','🥅','⛳️','⛸️','🎣','🤿','🎽','🎿','🛷','🥌','🎯','🪀','🪁','🎱','🎖️','🏆️','🏅','🥇','🥈','🥉','🍇','🍈','🍉','🍊','🍋','🍌','🍍','🥭','🍎','🍏','🍐','🍑','🍒','🍓','🥝','🍅','🥥','🥑','🍆','🥔','🥕','🌽','🌶️','🥒','🥬','🥦','🧄','🧅','🍄','🥜','🌰','🍞','🥐','🥖','🥨','🥯','🥞','🧇','🧀','🍖','🍗','🥩','🥓','🍔','🍟','🍕','🌭','🥪','🌮','🌯','🥙','🧆','🥚','🍳','🥘','🍲','🥣','🥗','🍿','🧈','🧂','🥫','🍱','🍘','🍙','🍚','🍛','🍜','🍝','🍠','🍢','🍣','🍤','🍥','🥮','🍡','🥟','🥠','🥡','🍦','🍧','🍨','🍩','🍪','🎂','🍰','🧁','🥧','🍫','🍬','🍭','🍮','🍯','🍼','🥛','☕️','🍵','🍶','🍾','🍷','🍸️','🍹','🍺','🍻','🥂','🥃','🥤','🧃','🧉','🧊','🥢','🍽️','🍴','🥄','🔪','🐵','🐒','🦍','🦧','🐶','🐕️','🦮','🐕‍','🦺','🐩','🐺','🦊','🦝','🐱','🐈️','🐈‍','🦁','🐯','🐅','🐆','🐴','🐎','🦄','🦓','🦌','🐮','🐂','🐃','🐄','🐷','🐖','🐗','🐽','🐏','🐑','🐐','🐪','🐫','🦙','🦒','🐘','🦏','🦛','🐭','🐁','🐀','🐹','🐰','🐇','🐿️','🦔','🦇','🐻','🐻‍','❄️','🐨','🐼','🦥','🦦','🦨','🦘','🦡','🐾','🦃','🐔','🐓','🐣','🐤','🐥','🐦️','🐧','🕊️','🦅','🦆','🦢','🦉','🦩','🦚','🦜','🐸','🐊','🐢','🦎','🐍','🐲','🐉','🦕','🦖','🐳','🐋','🐬','🐟️','🐠','🐡','🦈','🐙','🦑','🦀','🦞','🦐','🦪','🐚','🐌','🦋','🐛','🐜','🐝','🐞','🦗','🕷️','🕸️','🦂','🦟','🦠','💐','🌸','💮','🏵️','🌹','🥀','🌺','🌻','🌼','🌷','🌱','🌲','🌳','🌴','🌵','🎋','🎍','🌾','🌿','☘️','🍀','🍁','🍂','🍃','🌍️','🌎️','🌏️','🌑','🌒','🌓','🌔','🌕️','🌖','🌗','🌘','🌙','🌚','🌛','🌜️','☀️','🌝','🌞','🪐','💫','⭐️','🌟','✨','🌠','🌌','☁️','⛅️','⛈️','🌤️','🌥️','🌦️','🌧️','🌨️','🌩️','🌪️','🌫️','🌬️','🌀','🌈','🌂','☂️','☔️','⛱️','⚡️','❄️','☃️','⛄️','☄️','🔥','💧','🌊','💥','💦','💨','😀','😃','😄','😁','😆','😅','🤣','😂','🙂','🙃','😉','😊','😇','🥰','😍','🤩','😘','😗','☺️','😚','😙','😋','😛','😜','🤪','😝','🤑','🤗','🤭','🤫','🤔','🤐','🤨','😐️','😑','😶','😏','😒','🙄','😬','🤥','😌','😔','😪','😮‍','💨','🤤','😴','😷','🤒','🤕','🤢','🤮','🤧','🥵','🥶','😶‍','🌫️','🥴','😵‍','💫','😵','🤯','🤠','🥳','😎','🤓','🧐','😕','😟','🙁','☹️','😮','😯','😲','😳','🥺','😦','😧','😨','😰','😥','😢','😭','😱','😖','😣','😞','😓','😩','😫','🥱','😤','😡','😠','🤬','😈','👿','💀','☠️','💩','🤡','👹','👺','👻','👽️','👾','🤖','😺','😸','😹','😻','😼','😽','🙀','😿','😾','🙈','🙉','🙊','👋','🤚','🖐️','✋','🖖','👌','🤏','✌️','🤞','🤟','🤘','🤙','👈️','👉️','👆️','🖕','👇️','☝️','👍️','👎️','✊','👊','🤛','🤜','👏','🙌','👐','🤲','🤝','🙏','✍️','💅','🤳','💪','🦾','🦿','🦵','🦶','👂️','🦻','👃','🧠','🦷','🦴','👀','👁️','👅','👄','💋','👶','🧒','👦','👧','🧑','👨','👩','🧔','🧔‍♀️','🧔‍♂️','🧑','👨‍','🦰','👩‍','🦰','🧑','👨‍','🦱','👩‍','🦱','🧑','👨‍','🦳','👩‍','🦳','🧑','👨‍','🦲','👩‍','🦲','👱','👱‍♂️','👱‍♀️','🧓','👴','👵','🙍','🙍‍♂️','🙍‍♀️','🙎','🙎‍♂️','🙎‍♀️','🙅','🙅‍♂️','🙅‍♀️','🙆','🙆‍♂️','🙆‍♀️','💁','💁‍♂️','💁‍♀️','🙋','🙋‍♂️','🙋‍♀️','🧏','🧏‍♂️','🧏‍♀️','🙇','🙇‍♂️','🙇‍♀️','🤦','🤦‍♂️','🤦‍♀️','🤷','🤷‍♂️','🤷‍♀️','🧑‍⚕️','👨‍⚕️','👩‍⚕️','🧑‍🎓','👨‍🎓','👩‍🎓','🧑‍🏫','👨‍🏫','👩‍🏫','🧑‍⚖️','👨‍⚖️','👩‍⚖️','🧑‍🌾','👨‍🌾','👩‍🌾','🧑‍🍳','👨‍🍳','👩‍🍳','🧑‍🔧','👨‍🔧','👩‍🔧','🧑‍🏭','👨‍🏭','👩‍🏭','🧑‍💼','👨‍💼','👩‍💼','🧑‍🔬','👨‍🔬','👩‍🔬','🧑‍💻','👨‍💻','👩‍💻','🧑‍🎤','👨‍🎤','👩‍🎤','🧑‍🎨','👨‍🎨','👩‍🎨','🧑‍✈️','👨‍✈️','👩‍✈️','🧑‍🚀','👨‍🚀','👩‍🚀','🧑‍🚒','👨‍🚒','👩‍🚒','👮','👮‍♂️','👮‍♀️','🕵️','🕵️‍♂️','🕵️‍♀️','💂','💂‍♂️','💂‍♀️','👷','👷‍♂️','👷‍♀️','🤴','👸','👳','👳‍♂️','👳‍♀️','👲','🧕','🤵','🤵‍♂️','🤵‍♀️','👰','👰‍♂️','👰‍♀️','🤰','🤱','👩‍','🍼','👨‍','🍼','🧑‍','🍼','👼','🎅','🤶','🧑‍','🎄','🦸','🦸‍♂️','🦸‍♀️','🦹','🦹‍♂️','🦹‍♀️','🧙','🧙‍♂️','🧙‍♀️','🧚','🧚‍♂️','🧚‍♀️','🧛','🧛‍♂️','🧛‍♀️','🧜','🧜‍♂️','🧜‍♀️','🧝','🧝‍♂️','🧝‍♀️','🧞','🧞‍♂️','🧞‍♀️','🧟','🧟‍♂️','🧟‍♀️','💆','💆‍♂️','💆‍♀️','💇','💇‍♂️','💇‍♀️','🚶','🚶‍♂️','🚶‍♀️','🧍','🧍‍♂️','🧍‍♀️','🧎','🧎‍♂️','🧎‍♀️','🧑‍','🦯','👨‍','🦯','👩‍','🦯','🧑‍','🦼','👨‍','🦼','👩‍','🦼','🧑‍','🦽','👨‍','🦽','👩‍','🦽','🏃','🏃‍♂️','🏃‍♀️','💃','🕺','🕴️','👯','👯‍♂️','👯‍♀️','🧖','🧖‍♂️','🧖‍♀️','🧗','🧗‍♂️','🧗‍♀️','🤺','🏇','⛷️','🏂️','🏌️','🏌️‍♂️','🏌️‍♀️','🏄️','🏄‍♂️','🏄‍♀️','🚣','🚣‍♂️','🚣‍♀️','🏊️','🏊‍♂️','🏊‍♀️','⛹️','⛹️‍♂️','⛹️‍♀️','🏋️','🏋️‍♂️','🏋️‍♀️','🚴','🚴‍♂️','🚴‍♀️','🚵','🚵‍♂️','🚵‍♀️','🤸','🤸‍♂️','🤸‍♀️','🤼','🤼‍♂️','🤼‍♀️','🤽','🤽‍♂️','🤽‍♀️','🤾','🤾‍♂️','🤾‍♀️','🤹','🤹‍♂️','🤹‍♀️','🧘','🧘‍♂️','🧘‍♀️','🛀','🛌','🧑‍','🤝‍','🧑','👭','👫','👬','💏','👩‍❤️‍💋‍👨','👨‍❤️‍💋‍👨','👩‍❤️‍💋‍👩','💑','👩‍❤️‍👨','👨‍❤️‍👨','👩‍❤️‍👩','👪️','👨‍👩‍👦','👨‍👩‍👧','👨‍👩‍👧‍👦','👨‍👩‍👦‍👦','👨‍👩‍👧‍👧','👨‍👨‍👦','👨‍👨‍👧','👨‍👨‍👧‍👦','👨‍👨‍👦‍👦','👨‍👨‍👧‍👧','👩‍👩‍👦','👩‍👩‍👧','👩‍👩‍👧‍👦','👩‍👩‍👦‍👦','👩‍👩‍👧‍👧','👨‍👦','👨‍👦‍👦','👨‍👧','👨‍👧‍👦','👨‍👧‍👧','👩‍👦','👩‍👦‍👦','👩‍👧','👩‍👧‍👦','👩‍👧‍👧','🗣️','👤','👥','👣']
         const mokis = mojis[Math.floor(Math.random() * (mojis.length))]
-        Suhail.bot.sendMessage(msg.chat, {
+        Lucifer.bot.sendMessage(msg.chat, {
             react: {
                 text: mokis,
                 key: msg.key
