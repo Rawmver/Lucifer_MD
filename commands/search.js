@@ -55,7 +55,7 @@ const fetch = require('node-fetch')
            desc: "Finds info about song",
            filename: __filename,
        },
-       async(Suhail, citel, text) => {
+       async(Lucifer, citel, text) => {
             let mime = citel.quoted.mtype
             if (!citel.quoted) return citel.reply(`Send/Reply audio  ${prefix}find`);
             if (!/audio/.test(mime)) return citel.reply(`Send/Reply audio ${prefix}shazam`);
@@ -88,7 +88,7 @@ const fetch = require('node-fetch')
                        },
                    },
                };
-               await Suhail.bot.sendMessage(citel.chat, buttonMessaged, { quoted: citel, });
+               await Lucifer.bot.sendMessage(citel.chat, buttonMessaged, { quoted: citel, });
        }
     )
     //------------------------------------------------------------------------------------
@@ -100,7 +100,7 @@ smd({
             use: '<text>',
             filename: __filename,
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
 let limit = 5;
  try {
     if (!text) return citel.reply("```Uhh Please, Give me Url!```");
@@ -123,7 +123,7 @@ smd({
             use: '<text>',
             filename: __filename,
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             if (!text) return citel.reply(`_Name a Series or movie ${tlang().greet}._`);
             let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`);
             let imdbt = "";
@@ -159,7 +159,7 @@ smd({
             use: '<location>',
             filename: __filename,
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             if (!text) return citel.reply(`Give me location.Baka!!`);
             let wdata = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
@@ -178,7 +178,7 @@ smd({
             textw += `*Country:-* ${wdata.data.sys.country}\n`;
             textw +=Config.caption ;
 
-            Suhail.bot.sendMessage( citel.chat, {  text: textw }, {  quoted: citel } );
+            Lucifer.bot.sendMessage( citel.chat, {  text: textw }, {  quoted: citel } );
 
         }
     )
@@ -190,7 +190,7 @@ smd({
             use: '<sign>\n:Example: horo libra',
             filename: __filename,
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             if (!text) return citel.reply(`Provide me a sign!`)
             try {
                 const URL = `https://aztro.sameerkumar.website/?sign=${text}&day=today`;
@@ -228,7 +228,7 @@ smd({
             use: '<text>',
             filename: __filename,
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
 
           citel.reply (`*_Please Wait, Getting Cricket Info_*`);
 const response = await fetch('https://api.cricapi.com/v1/currentMatches?apikey=f68d1cb5-a9c9-47c5-8fcd-fbfe52bace78');
@@ -259,7 +259,7 @@ smd({
             use: '<text>',
             filename: __filename,
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             if (!text) return citel.reply(`give me a query\n*Example : .google Who is Suhail Tech.*`);
             let google = require('google-it');
             google({ 'query': text}).then(res => {
@@ -283,7 +283,7 @@ smd({
             use: '<text>',
             filename: __filename,
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
 
    if (!text) return citel.reply(`Provide me a query!\n*Ex : .image luffy |10*`)
    let buttonMessage = {}
@@ -367,11 +367,11 @@ smd({
             desc: "Sends two couples pics.",
             filename: __filename,
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
             let random = anu[Math.floor(Math.random() * anu.length)]
-            Suhail.bot.sendMessage(citel.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: citel })
-            Suhail.bot.sendMessage(citel.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: citel })
+            Lucifer.bot.sendMessage(citel.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: citel })
+            Lucifer.bot.sendMessage(citel.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: citel })
         }
     ) 
     //---------------------------------------------------------------------------
@@ -383,10 +383,10 @@ smd({
         use: '9112345678xx',
         filename: __filename,
     },
-    async(Suhail, citel, text) => {
+    async(Lucifer, citel, text) => {
  if(!text) return await citel.reply('Give Me Number without + sign. Example: .iswa 9231844741xx')
         var inputnumber = text.split(" ")[0]
-        if (!inputnumber.includes('x')) return citel.reply(`*You did not add x*\nExample: iswa 9231844741xx  \n ${Config.caption}`)
+        if (!inputnumber.includes('x')) return citel.reply(`*You did not add x*\nExample: iswa 9230829908xx  \n ${Config.caption}`)
         citel.reply(`*Searching for WhatsApp account in given range...* \n ${Config.caption}`)
 
         function countInstances(string, word) {  return string.split(word).length - 1; }
@@ -413,11 +413,11 @@ smd({
             else if (random_length == 3) {random = `${status1}${status2}${status3}` } 
             else if (random_length == 4) {random = `${status1}${status2}${status3}${dom4}` }
          
-            var anu = await Suhail.bot.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`);
+            var anu = await Lucifer.bot.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`);
             var anuu = anu.length !== 0 ? anu : false
             try 
             {
-                  try { var anu1 = await Suhail.bot.fetchStatus(anu[0].jid); } 
+                  try { var anu1 = await Lucifer.bot.fetchStatus(anu[0].jid); } 
                   catch { var anu1 = '401' ; }
                   if (anu1 == '401' || anu1.status.length == 0) { nobio += `wa.me/${anu[0].jid.split("@")[0]}\n` ; } 
                   else {  text += `🧐 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*Bio :* ${anu1.status}\n🍁*Last update :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n` ;   }
@@ -436,10 +436,10 @@ smd({
         use: '9112345678xx',
         filename: __filename,
     },
-    async(Suhail, citel, text) => {
+    async(Lucifer, citel, text) => {
 if(!text) return await citel.reply('Give Me Number without + sign. Example: .nowa 9231844741xx')
 const inputNumber = text.split(" ")[0]
-if (!inputNumber.includes('x')) return citel.reply(`*You did not add x in number.*\nExample: ${prefix}nowa 9231844741xx  \n ${Config.caption}`)
+if (!inputNumber.includes('x')) return citel.reply(`*You did not add x in number.*\nExample: ${prefix}nowa 9230829908xx  \n ${Config.caption}`)
 citel.reply(`*Searching for WhatsApp account in the given range...*\n${Config.caption}`);
 function countInstances(string, word) { return string.split(word).length - 1; }
 const number0 = inputNumber.split('x')[0];
