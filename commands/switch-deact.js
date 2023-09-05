@@ -51,7 +51,7 @@ CURRENTLY RUNNING ON BETA VERSION!!
          category: "group",
          filename: __filename
      },
-     async(Suhail, msg, text,{ isCreator }) => {
+     async(Lucifer, msg, text,{ isCreator }) => {
          //-----------------------------------------	
          if (!msg.isGroup) return msg.reply(tlang().group);
          const groupAdmins = await getAdmin(Suhail.bot, msg)
