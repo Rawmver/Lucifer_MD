@@ -107,7 +107,7 @@ smd({
   category: "misc",
   filename: __filename
 },
-async(Suhail, msg, text) => {
+async(Lucifer, msg, text) => {
   const upt = runtime(process.uptime())
   msg.reply(`*_Uptime of ${Config.botname}: ${upt}_*`)
 }
@@ -122,7 +122,7 @@ smd({
         category: "general",
         filename: __filename,
     },
-    async(Suhail, citel) => {
+    async(Lucifer, citel) => {
       try{
           let { data } = await axios.get('https://api.github.com/repos/SuhailTechInfo/Secktor-bot')
         let cap = `
@@ -150,7 +150,7 @@ smd({
         category: "general",
         filename: __filename,
     },
-    async(Suhail, citel) => {
+    async(Lucifer, citel) => {
 
         const uptime = process.uptime();
         timestampe = speed();
@@ -165,7 +165,7 @@ smd({
   *❲❒❳ Owner:*  ${Config.ownername}\n
   *❲❒❳ Support:* _${gurl}_ 
 ${Config.caption?'\n\n'+Config.caption : ''}`.trim();
-        return await Suhail.bot.sendMessage(citel.chat, { image: { url: await botpic() },    caption:ter, },{ quoted: citel, });
+        return await Lucifer.bot.sendMessage(citel.chat, { image: { url: await botpic() },    caption:ter, },{ quoted: citel, });
 
     }
 )
@@ -177,7 +177,7 @@ smd({
   category: "general",
   filename: __filename,
 },
-async(Suhail, msg) => {
+async(Lucifer, msg) => {
   try{
       const used = process.memoryUsage()
       const cpus = os.cpus().map(cpu => {
@@ -232,7 +232,7 @@ ${cpus[0] ? `  *❲❒❳ Total CPU Usage:*
 //=================================================================================
 //                      AnonyChat
 //=================================================================================
-const sᴜʜᴀɪʟ_ᴍᴅ_AnonyMsg = {}
+const Lucifer_MD_AnonyMsg = {}
 let isAnnonyMsgAlive = '';
 let cmdName = 'rcg';
 
