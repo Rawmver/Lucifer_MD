@@ -58,7 +58,7 @@ smd({
             filename: __filename,
             use: '<add sticker url.>'
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
 		if (!text) return await citel.reply("_Enter a tg sticker url_\nEg: .tgs https://t.me/addstickers/Oldboyfinal\nKeep in mind that there is a chance of ban if used frequently");
 		if (!text.includes("addstickers"))  return await citel.reply("_Uhh Please Enter a Valid tg sticker url_\nEg: .tgs https://t.me/addstickers/Oldboyfinal");
 		let tgUrl = text.split("|")[0];
@@ -111,7 +111,7 @@ function _0x6df0(){const _0x2b7495=['send','chat','sendMessage','status\x20\x20\
             use: '<add fb url.>'
         },
 
-        async(Suhail.bot, citel, text) => {
+        async(Lucifer.bot, citel, text) => {
           if(!text) return citel.reply(`*_Please Give me Facebook Video Url_*`);
 
 	
@@ -135,7 +135,7 @@ let vurl=res.url[0].url;
                         caption : "    *FACEBOOK DOWNLOADER*  \n"+data
                         
                     }
-                 Suhail.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+                 Lucifer.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel });
 
 
 }
@@ -184,13 +184,13 @@ smd({
             use: '<add tiktok url.>'
         },
 
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
  if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`);
  let txt = text ? text.split(" ")[0]:'';
  if (!/tiktok/.test(txt)) return await citel.send(`*Uhh Please, Give me Valid Tiktok Video Url!*`);
  const { status ,thumbnail, video, audio } = await tiktokdl(txt)
  //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio )
- if (status) return await Suhail.bot.sendMessage(citel.chat, {video : {url : video } , caption : Config.caption } , {quoted : citel });
+ if (status) return await Lucifer.bot.sendMessage(citel.chat, {video : {url : video } , caption : Config.caption } , {quoted : citel });
  else return await citel.send("Error While Downloading Your Video") 
 })
 //---------------------------------------------------------------------------
@@ -205,7 +205,7 @@ smd({
             use: '<add tiktok url.>'
         },
 
-        async(Suhail.bot, citel, text) => {
+        async(Lucifer.bot, citel, text) => {
 if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`);
 let txt = text ? text.split(" ")[0]:'';
 const ttdl =  require("tiktok-video-downloader");
@@ -239,7 +239,7 @@ smd({
         filename: __filename,
         use: '<add fb url.>'
 },
-async(Suhail, citel, text) => {
+async(Lucifer, citel, text) => {
         const _0x53f436=_0x4a53;(function(_0x469779,_0x9bf43f){const _0x1184c6=_0x4a53,_0x33c964=_0x469779();while(!![]){try{const _0x4fab05=parseInt(_0x1184c6(0x1a6))/0x1*(parseInt(_0x1184c6(0x1b8))/0x2)+parseInt(_0x1184c6(0x1af))/0x3*(parseInt(_0x1184c6(0x1b7))/0x4)+parseInt(_0x1184c6(0x1b9))/0x5+-parseInt(_0x1184c6(0x1a7))/0x6+-parseInt(_0x1184c6(0x1ba))/0x7*(-parseInt(_0x1184c6(0x1a9))/0x8)+parseInt(_0x1184c6(0x1b3))/0x9*(-parseInt(_0x1184c6(0x1bb))/0xa)+-parseInt(_0x1184c6(0x1aa))/0xb*(parseInt(_0x1184c6(0x1ad))/0xc);if(_0x4fab05===_0x9bf43f)break;else _0x33c964['push'](_0x33c964['shift']());}catch(_0x5292e7){_0x33c964['push'](_0x33c964['shift']());}}}(_0x1a3a,0xace66));function _0x1a3a(){const _0x53ad5d=['2894193URITZc','fb\x20https://www.facebook.com/watch/?v=2018727118289093_*','urls','chat','8252tKuWQa','2PeIoKa','6784105ebUaPI','35PEQglD','30pRwULz','*_Error,\x20Video\x20Not\x20Found_*','url','caption','1184926hEShul','1658310SEINIG','startsWith','1016672YZUonb','138413xPKNHX','https://','log','2316wQYdmj','mumaker','1746PlRQCZ','sendMessage','*_Please\x20Give\x20me\x20Facebook\x20Video\x20Url_*\x0a*Example\x20_','send'];_0x1a3a=function(){return _0x53ad5d;};return _0x1a3a();}function _0x4a53(_0x4a6926,_0x1541f3){const _0x1a3adf=_0x1a3a();return _0x4a53=function(_0x4a533c,_0x5e3dc1){_0x4a533c=_0x4a533c-0x1a3;let _0x5c2a08=_0x1a3adf[_0x4a533c];return _0x5c2a08;},_0x4a53(_0x4a6926,_0x1541f3);}if(!text||!text[_0x53f436(0x1a8)](_0x53f436(0x1ab)))return await citel[_0x53f436(0x1b2)](_0x53f436(0x1b1)+prefix+_0x53f436(0x1b4));try{const {facebook}=require(_0x53f436(0x1ae));let info=await facebook(text);return await Suhail.bot[_0x53f436(0x1b0)](citel[_0x53f436(0x1b6)],{'video':{'url':info[_0x53f436(0x1b5)][0x0][_0x53f436(0x1a4)]},'caption':Config[_0x53f436(0x1a5)]},{'quoted':citel});}catch(_0xb02f31){return await citel[_0x53f436(0x1b2)](_0x53f436(0x1a3));console[_0x53f436(0x1ac)]('error\x20while\x20Fb\x20Downloading\x20:\x20',_0xb02f31);}
 
 /*fbInfoVideo.getInfo(text)
@@ -284,7 +284,7 @@ smd({
             use: '<add sticker url.>',
         },
 
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
         if(!text )return citel.reply("*_Give me App Name_*");
 
 	const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}`; };
@@ -298,7 +298,7 @@ smd({
 	
 	
 	const apkSize = parseInt(data.size);
-	if(apkSize > 100) return citel.send(`❌ File size bigger than 150mb.`);
+	if(apkSize > 1000) return citel.send(`❌ File size bigger than 150mb.`);
        const url = data.dllink;
 	 let  inf  ="*App Name :* " +data.name;
          inf +="\n*App id        :* " +data.package;
@@ -326,7 +326,7 @@ axios.get(url, { responseType: 'stream' })
                         caption : inf
                         
                     }
-                  Suhail.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                  Lucifer.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
 
     console.log('File downloaded successfully');
 
@@ -364,7 +364,7 @@ let data = await download(searc[0].id);
                         caption : inf
                         
                     }
-                 Suhail.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                 Lucifer.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
 */}
 )
   //---------------------------------------------------------------------------
@@ -376,7 +376,7 @@ smd({
             use: '<add sticker url.>'
         },
 
-async(Suhail, citel, text) => {
+async(Lucifer, citel, text) => {
 if (!text) return citel.send('Uhh Please, Give me  Google Drive Url') 
 if (!(text && text.match(/drive\.google/i))) citel.send('Uhh Please, Give me Valid Google Drive Url')
 let id =(text.match(/\/?id=(.+)/i) || text.match(/\/d\/(.*?)\//))[1]
@@ -407,8 +407,8 @@ smd({
             filename: __filename,
             use: '<add sticker url.>',
         },
-        async(Suhail, citel, text) => {
-	if (!text) return await citel.send('*Provide Repo Url, Ex:- _.gitclone https://github.com/SuhailTechInfo/Secktor-bot_*') 
+        async(Lucifer, citel, text) => {
+	if (!text) return await citel.send('*Provide Repo Url, Ex:- _.gitclone https://github.com/Rawmver/Lucifer_MD_*') 
     const regex = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     if (!regex.test(text) ) return await citel.send('*Uhh Please, Provide Valid Repositry Url*');
     let [_, user, repo] = text.match(regex) || []
@@ -428,7 +428,7 @@ smd({
             filename: __filename,
             use: '<Hii,this is Suhail>',
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             if (!text && !citel.quoted) return citel.reply(`*Please give me Text*\n *_Example : .tts Hi,I am Suhail Tech._*`);
             if (!text) { text=citel.quoted.text;  }
             let texttts = text
@@ -437,7 +437,7 @@ smd({
                 slow: false,
                 host: "https://translate.google.com",
             });
-            return Suhail.bot.sendMessage(citel.chat,{audio: {url: ttsurl}, mimetype: "audio/mpeg", fileName: `ttsCitelVoid.m4a` },{quoted: citel } );
+            return Lucifer.bot.sendMessage(citel.chat,{audio: {url: ttsurl}, mimetype: "audio/mpeg", fileName: `ttsCitelVoid.m4a` },{quoted: citel } );
         }
 
     )
@@ -449,7 +449,7 @@ smd({
             filename: __filename,
             use: '<faded-Alan Walker>',
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             if (!text) return citel.reply(`Example : ${prefix}video Back in black`)
             let yts = require("secktor-pack")
             let search = await yts(text)
@@ -476,7 +476,7 @@ smd({
                         mimetype: 'video/mp4',
                         caption: "  Here's Your Video" + Config.caption ,
                     }
-                 Suhail.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                 Lucifer.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                  return fs.unlinkSync(`./${randomName}`);
 
                 }catch(e){return await citel.reply("Error While Downloading Video : " + e ); }
@@ -509,7 +509,7 @@ smd({
                 mentions: await Suhail.bot.parseMention(teskd),
                 sections
             }
-            return Suhail.bot.sendMessage(citel.chat, listMessage, {quoted: citel })
+            return Lucifer.bot.sendMessage(citel.chat, listMessage, {quoted: citel })
 */
         }
     )
@@ -522,7 +522,7 @@ smd({
             filename: __filename,
             use: '<faded-Alan walker.>',
         },
-async(Suhail, citel, text) => {
+async(Lucifer, citel, text) => {
    const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}`; };    
    if (text.length == 0 && !citel.quoted) return citel.reply(`Give Song Name, Ex ${prefix}play back in black*`);
    try {
@@ -537,7 +537,7 @@ async(Suhail, citel, text) => {
                 urlYt = anu.url; 
             }
             let infoYt = await ytdl.getInfo(urlYt);
-            if (infoYt.videoDetails.lengthSeconds >= 1200) return citel.reply(`*song not Found, Try Differ Name*`);
+            if (infoYt.videoDetails.lengthSeconds >= 1200) return citel.reply(`*song not Found, Give me another Name*`);
             let titleYt = infoYt.videoDetails.title;   
 	    citel.reply(`_Downloading ${infoYt.videoDetails.title}?_`);
             let randomName = getRandom(".mp3");
@@ -549,7 +549,7 @@ async(Suhail, citel, text) => {
             
             let stats = fs.statSync(`./${randomName}`);
             let fileSizeInBytes = stats.size;
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+            let fileSizeInMegabytes = fileSizeInBytes / (10024 * 10024);
             if (fileSizeInMegabytes <= dlsize) 
             {
                 let yts = require("secktor-pack");
@@ -562,13 +562,13 @@ async(Suhail, citel, text) => {
 				    headerType: 4,
 				 }
                  
-                await Suhail.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                await Lucifer.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                 return fs.unlinkSync(`./${randomName}`);
             } 
             else {   citel.reply(`❌ File size bigger than 100mb.`);    }
              return fs.unlinkSync(`./${randomName}`);
    
-   }catch (e) { return citel.reply(`Error While Downloading Your Song`);  }
+   }catch (e) { return citel.reply(`Facing Error, Try Again`);  }
 })
     
 
@@ -580,20 +580,20 @@ smd({
             filename: __filename,
             use: '<Dowanload Tiktok Sounds>',
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             if (!text) return citel.send(`*Give A Number Example: ${prefix}sound 5*`)
 	const n = parseInt(text);
 	if(n.toString()=="NaN" || n < 1 || n > 160 ) return citel.reply('```❌ Give Me A Number From 1 to 160```');
 	   let url = `https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/sound${n.toString()}.mp3`
             let anu  = await getBuffer(url)
-//await Suhail.bot.sendMessage(citel.chat, { audio: botzy_buffer, mimetype: 'audio/mp4', ptt: true })
+//await Lucifer.bot.sendMessage(citel.chat, { audio: botzy_buffer, mimetype: 'audio/mp4', ptt: true })
         let buttonMessage = {
 		audio: anu,
 		fileName: url.toString() ,
 		mimetype: 'audio/mp4',
 		ptt: true 
 		}
-	return Suhail.bot.sendMessage(citel.chat,buttonMessage, { quoted: citel } )
+	return Lucifer.bot.sendMessage(citel.chat,buttonMessage, { quoted: citel } )
 })
 
     //---------------------------------------------------------------------------
@@ -604,7 +604,7 @@ smd({
             filename: __filename,
             use: '<ringtone name>',
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             if (!text) return citel.send(`Example: ${prefix}ringtone back in black`)
 	    const {ringtone } = require('../lib/scraper')
             let anu = await ringtone(text)
@@ -614,7 +614,7 @@ smd({
 		fileName: anu[0].title + '.mp3',
 		mimetype: 'audio/mpeg',
 		}
-	return Suhail.bot.sendMessage(citel.chat,buttonMessage, { quoted: citel } )
+	return Lucifer.bot.sendMessage(citel.chat,buttonMessage, { quoted: citel } )
 })
 
     //---------------------------------------------------------------------------
@@ -625,7 +625,7 @@ smd({
             filename: __filename,
             use: '<text|image name>',
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             if (!text) return citel.send(`What picture are you looking for?`) && Suhail.bot.sendMessage(citel.chat, { react: {  text: '❌', key: citel.key  }  })
             try {
                 let anu = await pinterest(text)
@@ -646,7 +646,7 @@ smd({
                         }
                     }
                 }
-                return Suhail.bot.sendMessage(citel.chat, buttonMessage, {  quoted: citel })
+                return Lucifer.bot.sendMessage(citel.chat, buttonMessage, {  quoted: citel })
             } catch (e) {  return citel.reply("Uhh Plese, Give me a Name. Ex .pint apple")  }
         })
     //---------------------------------------------------------------------------
@@ -658,7 +658,7 @@ smd({
             filename: __filename,
             use: '<url of mediafire>',
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             if (!text) return citel.reply(`Give link ${tlang().greet}`);
             
             if (!text.includes("mediafire.com")) return citel.reply(`The link you provided is invalid`);
@@ -667,7 +667,7 @@ smd({
 	
 	if(!baby1.length) return citel.reply(`could not found anything`);
 	const apkSize = parseInt(baby1[0].size);
-	if(apkSize > 100) return citel.reply(`❌ File size bigger than 150mb.`);
+	if(apkSize > 1000) return citel.reply(`❌ File size bigger than 150mb.`);
 	
 let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
 *Nᴀᴍᴇ* : ${baby1[0].nama}
@@ -687,7 +687,7 @@ let result4 = ` *Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
                     
                 }; 
                 
- return await Suhail.bot.sendMessage(citel.chat, buttonMessaged)
+ return await Lucifer.bot.sendMessage(citel.chat, buttonMessaged)
                 //.catch((err) => citel.reply(`could not found anything`));
 
         }
@@ -702,14 +702,14 @@ smd({
             filename: __filename,
             use: '<give text>',
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
   
                 if (!text) return await citel.reply(`*_Ohh PLease, Give Me Song Name_*`);
                 let yts = require("secktor-pack")
                 let search = await yts(text);
                 let i = search.all[1] ;
                 let cap = "\t *---Yt Song Searched Data---*   \n\nTitle : " + i.title + "\nUrl : " + i.url +"\nDescription : " + i.timestamp +"\nViews : "+i.views +"\nUploaded : " +i.ago +"\nAuthor : "+i.author.name+"\n\n\nReply 1 To Video \nReply 2 To Audio" ;
-                Suhail.bot.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap });
+                Lucifer.bot.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap });
            
            
            
@@ -728,7 +728,7 @@ smd({
                 listSerch.push({
                     title: i.title,
                     rowId: `${prefix}ytmp3 ${i.url}`,
-                    description: `*Suhail-MD* / ${i.timestamp}`
+                    description: `*Lucifer_MD* / ${i.timestamp}`
                 })
             }
             const sections = [
@@ -744,10 +744,10 @@ smd({
                 footer: tlang().footer,
                 title: ``,
                 buttonText: "Songs",
-                mentions: await Suhail.bot.parseMention(teskd),
+                mentions: await Lucifer.bot.parseMention(teskd),
                 sections
             }
-            return Suhail.bot.sendMessage(citel.chat, listMessage, {
+            return Lucifer.bot.sendMessage(citel.chat, listMessage, {
                 quoted: citel
             })
             */
@@ -762,9 +762,9 @@ smd({
             filename: __filename,
             use: '<yt search text>',
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             let yts = require("secktor-pack");
-            if (!text) return citel.reply(`Example : ${prefix}yts WhatsApp Bot by Suhail Tech`);
+            if (!text) return citel.reply(`Example : ${prefix}yts WhatsApp Bot by Lucifer`);
             let search = await yts(text);
             let textt = "*YouTube Search*\n Result From " + text + "\n   ─────────────────── \n";
             let no = 1;
@@ -774,7 +774,7 @@ smd({
 		textt += `*Title : ${i.title}*`    //\n ♫Type : ${i.type}  \n🙈Views : ${i.views} \n⌛Duration : ${ i.timestamp }\n🌟Upload At : ${i.ago}\n👑Author : ${i.author.name}
 		textt += `\n*Url : ${i.url}* \n     *──────────────────*   \n`;
             }
-            return Suhail.bot.sendMessage(citel.chat, {
+            return Lucifer.bot.sendMessage(citel.chat, {
                 image: {
                     url: search.all[0].thumbnail,
                 },
@@ -794,7 +794,7 @@ smd({
             filename: __filename,
             use: '<yt video url>',
         },
-        async(Suhail, citel, text) => {
+        async(Lucifer, citel, text) => {
             const getRandom = (ext) => {
                 return `${Math.floor(Math.random() * 10000)}${ext}`;
             };
@@ -820,7 +820,7 @@ smd({
                 });
                 let stats = fs.statSync(`./${randomName}`);
                 let fileSizeInBytes = stats.size;
-                let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+                let fileSizeInMegabytes = fileSizeInBytes / (10024 * 10024);
                 if (fileSizeInMegabytes <= dlsize) {
                     let yts = require("secktor-pack");
                     let search = await yts(text);
@@ -839,7 +839,7 @@ smd({
                         headerType: 4,
                         
                     }
-                 Suhail.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                 Lucifer.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                  return fs.unlinkSync(`./${randomName}`);
                 } else {
                     citel.reply(`❌ File size bigger than 200mb.`);
@@ -858,7 +858,7 @@ smd({
         category: "downloader",
         use: '<yt video url>',
     },
-    async(Suhail, citel, text) => {
+    async(Lucifer, citel, text) => {
         const getRandom = (ext) => {
             return `${Math.floor(Math.random() * 10000)}${ext}`;
         };
@@ -892,7 +892,7 @@ smd({
 
             let stats = fs.statSync(`./${randomName}`);
             let fileSizeInBytes = stats.size;
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+            let fileSizeInMegabytes = fileSizeInBytes / (10024 * 10024);
             if (fileSizeInMegabytes <= dlsize) {
                 let yts = require("secktor-pack");
                 let search = await yts(text);
@@ -907,7 +907,7 @@ smd({
                 }
              
              
-                await Suhail.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                await Lucifer.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                 return fs.unlinkSync(`./${randomName}`);
             } else {
                 citel.reply(`❌ File size bigger than 200mb.`);
@@ -928,7 +928,7 @@ smd({
         category: "downloader",
         use: '<ytdoc video url>',
     },
-    async(Suhail, citel, text) => {
+    async(Lucifer, citel, text) => {
         const getRandom = (ext) => {  return `${Math.floor(Math.random() * 10000)}${ext}`;  };
 
         if (text.length === 0) return await citel.reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
@@ -949,7 +949,7 @@ smd({
 
             let stats = fs.statSync(`./${randomName}`);
             let fileSizeInBytes = stats.size;
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+            let fileSizeInMegabytes = fileSizeInBytes / (10024 * 10024);
             if (fileSizeInMegabytes <= dlsize) {
                 let yts = require("secktor-pack");
                 let search = await yts(text);
@@ -972,7 +972,7 @@ smd({
                         },
                     },
                 }
-                await Suhail.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                await Lucifer.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                 return fs.unlinkSync(`./${randomName}`);
             } else {         citel.reply(`❌ File size bigger than 200mb.`);    }
             fs.unlinkSync(`./${randomName}`);
@@ -984,9 +984,8 @@ smd({
 
 
 
-// By @SuhailTechInfo
-// https://wa.me/923184474176
-// https://www.youtube.com/@suhailtechinfo0
+// By @Lucifer
+// https://wa.me/923082990885
 
 
 
@@ -997,18 +996,18 @@ smd({
     filename: __filename,
     use: '<Add Yt Song Query>'
 },
-async(Suhail, citel, text) => {
+async(Lucifer, citel, text) => {
 if (!text) return await citel.reply(`*_Ohh PLease, Give Me Song Name_*`);
 let search = await yts(text)
 let i = search.all[1] ;
 let cap = "\t *---Yt Song Searched Data---*   \n\nTitle : " + i.title + "\nUrl : " + i.url +"\nDescription : " + i.timestamp +"\nViews : "+i.views +"\nUploaded : " +i.ago +"\nAuthor : "+i.author.name+"\n\n\nReply 1 To Video \nReply 2 To Audio" ;
-Suhail.bot.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap })
+Lucifer.bot.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap })
 })
 */
 
 //-----------------------------------------------------------------
 
-smd({ on: "text" }, async(Suhail, citel ,text , {isCreator} ) => {
+smd({ on: "text" }, async(Lucifer, citel ,text , {isCreator} ) => {
 
     const _0x14ac93=_0x3caf;(function(_0x1b5121,_0x5dee15){const _0x140ee0=_0x3caf,_0xd99394=_0x1b5121();while(!![]){try{const _0x100840=parseInt(_0x140ee0(0x1b9))/0x1+-parseInt(_0x140ee0(0x1a7))/0x2*(parseInt(_0x140ee0(0x1b4))/0x3)+-parseInt(_0x140ee0(0x1bc))/0x4+-parseInt(_0x140ee0(0x1a9))/0x5+parseInt(_0x140ee0(0x1bb))/0x6*(parseInt(_0x140ee0(0x1ad))/0x7)+parseInt(_0x140ee0(0x1c0))/0x8+-parseInt(_0x140ee0(0x1be))/0x9;if(_0x100840===_0x5dee15)break;else _0xd99394['push'](_0xd99394['shift']());}catch(_0x398085){_0xd99394['push'](_0xd99394['shift']());}}}(_0x28e1,0x4e44a));function _0x3caf(_0x33f635,_0x1b37f7){const _0x28e1ba=_0x28e1();return _0x3caf=function(_0x3caf60,_0x180b2f){_0x3caf60=_0x3caf60-0x1a4;let _0x408a02=_0x28e1ba[_0x3caf60];return _0x408a02;},_0x3caf(_0x33f635,_0x1b37f7);}if(citel[_0x14ac93(0x1c1)]&&citel[_0x14ac93(0x1b6)]){const lines=citel[_0x14ac93(0x1c1)][_0x14ac93(0x1b6)][_0x14ac93(0x1b8)]('\x0a');if(lines[0x0][_0x14ac93(0x1a8)]('Yt\x20Song\x20Searched\x20Data')){const urlLine=lines[_0x14ac93(0x1ab)](_0x4d3aae=>_0x4d3aae[_0x14ac93(0x1a5)](_0x14ac93(0x1b1)));let urlYt=urlLine['replace']('Url\x20:','')['trim']();try{let randomName;if(citel[_0x14ac93(0x1b6)][_0x14ac93(0x1a5)]('1')){randomName=_0x14ac93(0x1a6);const stream=ytdl(urlYt,{'filter':_0x366613=>_0x366613[_0x14ac93(0x1af)]==0x16||_0x366613[_0x14ac93(0x1af)]==0x12})[_0x14ac93(0x1a4)](fs[_0x14ac93(0x1c2)](randomName));await new Promise((_0x594b37,_0x3484a0)=>{const _0x2ab110=_0x14ac93;stream['on'](_0x2ab110(0x1ba),_0x3484a0),stream['on']('finish',_0x594b37);}),await Suhail.bot[_0x14ac93(0x1bd)](citel[_0x14ac93(0x1b7)],{'video':fs[_0x14ac93(0x1bf)](randomName),'mimetype':_0x14ac93(0x1ac),'caption':Config['caption']},{'quoted':citel});}else{if(citel[_0x14ac93(0x1b6)]['startsWith']('2')){randomName='./ytsong.mp3';const stream=ytdl(urlYt,{'filter':_0xb925ca=>_0xb925ca[_0x14ac93(0x1ae)]==0xa0||_0xb925ca['audioBitrate']==0x80})[_0x14ac93(0x1a4)](fs[_0x14ac93(0x1c2)](randomName));await new Promise((_0xbd802f,_0x3e8a3)=>{const _0x5d910d=_0x14ac93;stream['on']('error',_0x3e8a3),stream['on'](_0x5d910d(0x1b3),_0xbd802f);}),await Suhail.bot[_0x14ac93(0x1bd)](citel[_0x14ac93(0x1b7)],{'audio':fs['readFileSync'](randomName),'mimetype':_0x14ac93(0x1b2)},{'quoted':citel});}}try{return fs[_0x14ac93(0x1aa)](randomName);}catch(_0x4b8369){}}catch(_0x2c1b30){return await citel[_0x14ac93(0x1b0)](_0x14ac93(0x1b5)+_0x2c1b30);}}}function _0x28e1(){const _0x5a2e4d=['video/mp4','33215aEaqLO','audioBitrate','itag','reply','Url\x20:','audio/mpeg','finish','708PUYfdf','Error\x20While\x20Downloading\x20Video\x20:\x20','text','chat','split','211117duABrL','error','540vpKxFa','1041800hTaUXQ','sendMessage','1389897APKDJS','readFileSync','4173952CbWaym','quoted','createWriteStream','pipe','startsWith','./ytsong.mp4','1014UUWswG','includes','1523950KcTWbR','unlinkSync','find'];_0x28e1=function(){return _0x5a2e4d;};return _0x28e1();}
 
