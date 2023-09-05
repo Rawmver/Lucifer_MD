@@ -65,7 +65,7 @@ if(Config.HEROKU_APP_NAME && Config.HEROKU_API_KEY ){
              category: "tools",
              filename: __filename
          },
-  async(Suhail, msg, text) => {
+  async(Lucifer, msg, text) => {
 if(!msg.quoted) return await msg.reply(`*Please Reply A User*`);
 let user = msg.quoted.sender.split('@')[0]
 if (global.sudo.includes(user)) return msg.reply("Number Already Exist In Sudo");
@@ -97,7 +97,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
              category: "tools",
              filename: __filename
          },
-async(Suhail, msg, text) => {  return await  msg.reply(global.sudo);})
+async(Lucifer, msg, text) => {  return await  msg.reply(global.sudo);})
 //-------------------------------------------------------------------------
 
  smd({
@@ -106,7 +106,7 @@ async(Suhail, msg, text) => {  return await  msg.reply(global.sudo);})
              category: "tools",
              filename: __filename
          },
-  async(Suhail, msg, text) => {
+  async(Lucifer, msg, text) => {
     
 if(!msg.quoted) return msg.reply(`*Please Reply A User*`);
 let user = msg.quoted.sender.split('@')[0] ;
@@ -153,7 +153,7 @@ smd({
         filename: __filename
     },
     
-async(Suhail, msg , text,{ isCreator }) => {
+async(Lucifer, msg , text,{ isCreator }) => {
         
   if (!isCreator) return msg.reply(tlang().owner);
 const headers = {
@@ -180,7 +180,7 @@ smd({
         filename: __filename
     },
     
-async(Suhail, msg , text,{ isCreator }) => {
+async(Lucifer, msg , text,{ isCreator }) => {
 
      if (!isCreator) return msg.reply(tlang().owner);
 if (!text) return msg.reply (`give me Variable Name\n*E.x : ${prefix}setvar CAPTION: Powered By Suhail Tech*`);
@@ -214,7 +214,7 @@ smd({
         filename: __filename
     },
     
-async(Suhail, msg , text,{ isCreator }) => {
+async(Lucifer, msg , text,{ isCreator }) => {
    if (!isCreator) return msg.reply(tlang().owner);
 if (!text) return msg.reply (`give me Variable Name\nExample : ${prefix}getvar AUTO_READ_STATUS`);
 const headers = {
@@ -241,7 +241,7 @@ smd({
         category: "tools",
         filename: __filename
     },
-    async(Suhail, msg , text,{ isCreator }) => {
+    async(Lucifer, msg , text,{ isCreator }) => {
  if (!isCreator) return msg.reply(tlang().owner);
 if (!text) return msg.reply (`give me Variable Name\n*Example : ${prefix}setvar CAPTION: Powered By Suhail Tech*`);
 const headers = {
