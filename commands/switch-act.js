@@ -50,11 +50,11 @@ CURRENTLY RUNNING ON BETA VERSION!!
          category: "group",
          filename: __filename,
      },
-     async(Suhail, msg, text,{ isCreator }) => {
+     async(Lucifer, msg, text,{ isCreator }) => {
          //-----------------------------------------
          if (!msg.isGroup) return msg.reply(tlang().group);
-         const groupAdmins = await getAdmin(Suhail.bot, msg)
-         const botNumber = await Suhail.bot.decodeJid(msg.user)
+         const groupAdmins = await getAdmin(Lucifer.bot, msg)
+         const botNumber = await Lucifer.bot.decodeJid(msg.user)
         //const isBotAdmins = msg.isGroup ? groupAdmins.includes(botNumber) : false;
          const isAdmins = msg.isGroup ? groupAdmins.includes(msg.sender) :false;
          //-----------------------------------------
