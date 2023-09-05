@@ -45,7 +45,7 @@ const sᴜʜᴀɪʟ_ᴍᴅ_numGuess =  {};
 
 
 
-const sᴜʜᴀɪʟ_ᴍᴅ_cfg = {};
+const Lucifer_MD_cfg = {};
 const quotes = [
  "Connect Four: Where strategy meets fun!",
 "Let the battle of four-in-a-row begin!",
@@ -297,7 +297,8 @@ const countries = {
    "Vietnam": "Hanoi",
    "Yemen": "Sana'a",
    "Zambia": "Lusaka",
-   "Zimbabwe": "Harare"
+   "Zimbabwe": "Harare",
+   "Lucifer": "Royal"
  };
  
  
