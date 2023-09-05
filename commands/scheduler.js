@@ -48,7 +48,7 @@ CURRENTLY RUNNING ON BETA VERSION!!
      desc: "sets auto mute time in group.",
      category: "moderation",
  },
- async(Suhail, msg, text,{ isCreator }) => {
+ async(Lucifer, msg, text,{ isCreator }) => {
      if (!isCreator) return msg.reply(tlang().owner)
      if(!msg.isGroup) return msg.reply(tlang().group)
      if(!text.split(':')[1]) return msg.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`)
@@ -71,7 +71,7 @@ CURRENTLY RUNNING ON BETA VERSION!!
     desc: "sets unmute time in group.",
     category: "moderation",
 },
-async(Suhail, msg, text,{ isCreator }) => {
+async(Lucifer, msg, text,{ isCreator }) => {
     if (!isCreator) return msg.reply(tlang().owner)
     if(!msg.isGroup) return msg.reply(tlang().group)
     if(!text.split(':')[0]) return msg.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`)
@@ -94,7 +94,7 @@ async(Suhail, msg, text,{ isCreator }) => {
     desc: "Delete unmute from group.",
     category: "moderation",
 },
-async(Suhail, msg, text,{ isCreator }) => {
+async(Lucifer, msg, text,{ isCreator }) => {
     if (!isCreator) return msg.reply(tlang().owner)
     if(!msg.isGroup) return msg.reply(tlang().group)
           let Group = await sck.findOne({ id: msg.chat })
@@ -113,7 +113,7 @@ async(Suhail, msg, text,{ isCreator }) => {
     desc: "Delete mute from group.",
     category: "moderation",
 },
-async(Suhail, msg, text,{ isCreator }) => {
+async(Lucifer, msg, text,{ isCreator }) => {
     if (!isCreator) return msg.reply(tlang().owner)
     if(!msg.isGroup) return msg.reply(tlang().group)
           let Group = await sck.findOne({ id: msg.chat })
