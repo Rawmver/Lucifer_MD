@@ -50,18 +50,18 @@ smd({
         use: '<reply to any audio>',
       //  react:"✅",
     },
-    async(Suhail, msg) => {
+    async(Lucifer, msg) => {
         let mime = msg.quoted.mtype
         let set = "-af equalizer=f=54:width_type=o:width=2:g=20";
         if (/audio/.test(mime)) {
             msg.send(tlang().wait);
-            let media = await Suhail.bot.downloadAndSaveMediaMessage(msg.quoted);
+            let media = await Lucifer.bot.downloadAndSaveMediaMessage(msg.quoted);
             let ran = msg.sender.slice(6) + (".mp3");
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media);
                 if (err) return msg.error(err);
                 let buff = fs.readFileSync(ran);
-                Suhail.bot.sendMessage(
+                Lucifer.bot.sendMessage(
                     msg.chat, {
                         audio: buff,
                         mimetype: "audio/mpeg",
@@ -85,18 +85,18 @@ smd({
         use: '<reply to any audio>',
        // react:"✅",
     },
-    async(Suhail, msg) => {
+    async(Lucifer, msg) => {
         let mime = msg.quoted.mtype
         let set = "-af acrusher=.1:1:64:0:log";
         if (/audio/.test(mime)) {
             msg.send(tlang().wait);
-            let media = await Suhail.bot.downloadAndSaveMediaMessage(msg.quoted);
+            let media = await Lucifer.bot.downloadAndSaveMediaMessage(msg.quoted);
             let ran = msg.sender.slice(6) + (".mp3");
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media);
                 if (err) return msg.error(err);
                 let buff = fs.readFileSync(ran);
-                Suhail.bot.sendMessage(
+                Lucifer.bot.sendMessage(
                     msg.chat, {
                         audio: buff,
                         mimetype: "audio/mpeg",
@@ -120,18 +120,18 @@ smd({
         use: '<reply to any audio>',
       //  react:"✅",
     },
-    async(Suhail, msg) => {
+    async(Lucifer, msg) => {
         let mime = msg.quoted.mtype
         let set = "-af atempo=4/4,asetrate=44500*2/3";
         if (/audio/.test(mime)) {
             msg.send(tlang().wait);
-            let media = await Suhail.bot.downloadAndSaveMediaMessage(msg.quoted);
+            let media = await Lucifer.bot.downloadAndSaveMediaMessage(msg.quoted);
             let ran = msg.sender.slice(6) + (".mp3");
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media);
                 if (err) return msg.error(err);
                 let buff = fs.readFileSync(ran);
-                Suhail.bot.sendMessage(
+                Lucifer.bot.sendMessage(
                     msg.chat, {
                         audio: buff,
                         mimetype: "audio/mpeg",
@@ -155,18 +155,18 @@ smd({
         use: '<reply to any audio>',
        // react:"✅",
     },
-    async(Suhail, msg) => {
+    async(Lucifer, msg) => {
         let mime = msg.quoted.mtype
         let set = '-filter:a "atempo=1.63,asetrate=44100"';
         if (/audio/.test(mime)) {
             msg.send(tlang().wait);
-            let media = await Suhail.bot.downloadAndSaveMediaMessage(msg.quoted);
+            let media = await Lucifer.bot.downloadAndSaveMediaMessage(msg.quoted);
             let ran = msg.sender.slice(6) + (".mp3");
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media);
                 if (err) return msg.error(err);
                 let buff = fs.readFileSync(ran);
-                Suhail.bot.sendMessage(
+                Lucifer.bot.sendMessage(
                     msg.chat, {
                         audio: buff,
                         mimetype: "audio/mpeg",
@@ -190,18 +190,18 @@ smd({
         use: '<reply to any audio>',
       //  react:"✅",
     },
-    async(Suhail, msg) => {
+    async(Lucifer, msg) => {
         let mime = msg.quoted.mtype
         let set = '-filter_complex "areverse"';
         if (/audio/.test(mime)) {
             msg.send(tlang().wait);
-            let media = await Suhail.bot.downloadAndSaveMediaMessage(msg.quoted);
+            let media = await Lucifer.bot.downloadAndSaveMediaMessage(msg.quoted);
             let ran = msg.sender.slice(6) + (".mp3");
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media);
                 if (err) return msg.error(err);
                 let buff = fs.readFileSync(ran);
-                Suhail.bot.sendMessage( msg.chat, {  audio: buff, mimetype: "audio/mpeg",}, { quoted: msg, });
+                Lucifer.bot.sendMessage( msg.chat, {  audio: buff, mimetype: "audio/mpeg",}, { quoted: msg, });
                 fs.unlinkSync(ran);
             });
         } else  msg.send(`Reply to the audio you want to change with.*`);
