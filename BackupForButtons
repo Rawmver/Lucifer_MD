@@ -377,19 +377,19 @@ Thanks.
 
           
 let cc = `╔════◇
-║『𝗧𝗵𝗮𝗻𝗸𝘀 𝗙𝗼𝗿 𝗖𝗵𝗼𝗼𝘀𝗶𝗻𝗴 𝗦𝗲𝗰𝗸𝘁𝗼𝗿•𝗠𝗱』
+║『𝗧𝗵𝗮𝗻𝗸𝘀 𝗙𝗼𝗿 𝗖𝗵𝗼𝗼𝘀𝗶𝗻𝗴 Lucifer•𝗠𝗱』
 ║ _You complete first step to making Bot._
 ╚════════════════════════╝
 ╔═════◇
 ║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
 ║ *1.Repo:* _https://tinyurl.com/2czdxe7a_
 ║ *2.Ytube:* _https://tinyurl.com/22q7z2kv_
-║ *3.Owner:* _https://wa.me/923184474176_
+║ *3.Owner:* _https://wa.me/923082990885_
 ║ *Note :*_Don't provide your SESSION_ID to_
 ║ _anyone otherwise that can access chats_
 ╚════════════════════════╝
 `;
-          let session_id = await session.sendMessage(user, { text: "Secktor;;;" + c });
+          let session_id = await session.sendMessage(user, { text: "Lucifer;;;" + c });
           await session.sendMessage(user, { text: cc } , { quoted : session_id });
           
           await require('child_process').exec('rm -rf auth_info_baileys')
